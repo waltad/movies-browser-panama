@@ -1,8 +1,12 @@
 import { Navigation } from "./common/Navigation";
+import { Pagination } from "./common/Pagination";
 
 function App() {
   return (
-    <Navigation />
+    <>
+      <Navigation />
+      <Pagination />
+    </>
   );
 }
 
