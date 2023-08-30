@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.js": "/movies-browser-panama/static/js/main.e01b9f84.js",
+    "static/js/787.515bd589.chunk.js": "/movies-browser-panama/static/js/787.515bd589.chunk.js",
+    "index.html": "/movies-browser-panama/index.html",
+    "static/media/Logo.svg": "/movies-browser-panama/static/media/Logo.64519bacc48e8f0f2a39675e55643d9b.svg",
+    "static/media/Search.svg": "/movies-browser-panama/static/media/Search.6c9b7fea663747479f165be2c181742b.svg",
+    "main.e01b9f84.js.map": "/movies-browser-panama/static/js/main.e01b9f84.js.map",
+    "787.515bd589.chunk.js.map": "/movies-browser-panama/static/js/787.515bd589.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.e01b9f84.js"
+  ]
+}
