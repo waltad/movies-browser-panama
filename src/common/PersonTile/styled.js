@@ -13,7 +13,7 @@ export const Container = styled.article`
 
 export const ImageBox = styled.div`
     width: 176px;
-    height: 264px;
+    height: 231px;
     border-radius: 5px;
 `;
 
