@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ReactComponent as prevArrow } from "./svg's/prevArrow.svg";
-import { ReactComponent as nextArrow } from "./svg's/nextArrow.svg";
+import { ReactComponent as prevArrow } from "../../images/prevArrow.svg";
+import { ReactComponent as nextArrow } from "../../images/nextArrow.svg";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -15,7 +15,7 @@ export const Button = styled.button`
   align-items: center;
   padding: 8px 12px;
   margin-right: 12px;
-  background-color: lightblue;
+  background-color: #D6E4FF;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -23,12 +23,10 @@ export const Button = styled.button`
 
 export const PrevArrowIcon = styled(prevArrow)`
   margin: 0 4px;
-  color: lightblue;
 `;
 
 export const NextArrowIcon = styled(nextArrow)`
   margin: 0 4px;
-  color: lightblue;
 `;
 
 export const ButtonText = styled.p`
@@ -37,14 +35,14 @@ export const ButtonText = styled.p`
 
 export const PageCounter = styled.div`
   margin: 0 24px 0 16px;
-  color: black;
+  color: #7E839A;
   font-size: 16px;
   line-height: 150%;
 `;
 
 export const PageNumbers = styled.span`
   margin: 0 8px;
-  color: black;
+  color: #18181B;
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
