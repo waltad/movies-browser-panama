@@ -17,5 +17,12 @@ export const theme = {
     haiti: "#200E32",
   },
 
-  breakpoints: {},
+  breakpoints: {
+    desktop: "1300px",
+    tablet: "992px",
+    mobile: "768px",
+    mobileMini: "400px",
+  },
+
+  personTileShadow: "0px 4px 12px 0px rgba(186, 199, 213, 0.5);",
 };
