@@ -23,10 +23,12 @@ export const Button = styled.button`
 
 export const PrevArrowIcon = styled(prevArrow)`
   margin: 0 4px;
+  color: rgb(0, 68, 204);
 `;
 
 export const NextArrowIcon = styled(nextArrow)`
   margin: 0 4px;
+  color: rgb(0, 68, 204);
 `;
 
 export const ButtonText = styled.p`
