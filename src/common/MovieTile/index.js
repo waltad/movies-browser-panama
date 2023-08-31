@@ -1,4 +1,5 @@
 import { Description, Poster, Wrapper, Title, Year, Tags, Tag } from "./styled";
+import noPoster from "../../images/Movie.png";
 
 export const MovieTitle = () => {
   return (
