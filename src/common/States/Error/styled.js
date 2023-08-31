@@ -12,10 +12,6 @@ export const Heading = styled.h1`
     margin: 0;
 `;
 
-export const Paragraph = styled.p`
-    margin: 0;
-`;
-
 export const Subheading = styled.h2`
     font-weight: 500;
     font-size: 22px;
