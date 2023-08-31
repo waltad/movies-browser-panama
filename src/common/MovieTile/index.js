@@ -1,4 +1,4 @@
-import { Description, Poster, Wrapper, Title } from "./styled";
+import { Description, Poster, Wrapper, Title, Year, Tags, Tag } from "./styled";
 
 export const MovieTitle = () => {
   return (
@@ -7,6 +7,10 @@ export const MovieTitle = () => {
       </Poster>
       <Description>
         <Title>Mulan</Title>
+        <Year>2020</Year>
+        <Tags>
+          <Tag>adventure</Tag>
+        </Tags>
       </Description>
     </Wrapper>
   )
