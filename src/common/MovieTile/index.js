@@ -4,15 +4,17 @@ import noPoster from "../../images/Movie.png";
 export const MovieTitle = () => {
   return (
     <Wrapper>
-      <Poster>
-      </Poster>
+      <Poster src={noPoster} alt="" />
       <Description>
-        <Title>Mulan</Title>
+        <Title>Mulan long title long title Mulan long title long</Title>
         <Year>2020</Year>
         <Tags>
-          <Tag>adventure</Tag>
+          <Tag>Action</Tag>
+          <Tag>Adventure</Tag>
+          <Tag>Drama</Tag>
         </Tags>
       </Description>
+      
     </Wrapper>
   )
 };
