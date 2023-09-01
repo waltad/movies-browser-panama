@@ -15,7 +15,7 @@ export const Button = styled.button`
   align-items: center;
   padding: 8px 12px;
   margin-right: 12px;
-  background-color: #D6E4FF;
+  background-color: ${({ theme }) => theme.colors.pattensBlue};
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -23,12 +23,12 @@ export const Button = styled.button`
 
 export const PrevArrowIcon = styled(prevArrow)`
   margin: 0 4px;
-  color: rgb(0, 68, 204);
+  color: ${({ theme }) => theme.colors.scienceBlue};
 `;
 
 export const NextArrowIcon = styled(nextArrow)`
   margin: 0 4px;
-  color: rgb(0, 68, 204);
+  color: ${({ theme }) => theme.colors.scienceBlue};
 `;
 
 export const ButtonText = styled.p`
@@ -37,14 +37,14 @@ export const ButtonText = styled.p`
 
 export const PageCounter = styled.div`
   margin: 0 24px 0 16px;
-  color: #7E839A;
+  color: ${({ theme }) => theme.colors.waterloo};
   font-size: 16px;
   line-height: 150%;
 `;
 
 export const PageNumbers = styled.span`
   margin: 0 8px;
-  color: #18181B;
+  color: ${({ theme }) => theme.colors.woodSmoke};
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
