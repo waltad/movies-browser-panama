@@ -5,7 +5,11 @@ import { ReactComponent as Search } from "../../images/Search.svg";
 export const NavigationBar = styled.nav`
     width: 100%;
     height: 94px;
-    background-color: rgb(24, 24, 27);
+    background-color: ${({ theme }) => theme.colors.black};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        height: 142px;
+    }
 `;
 
 export const Wrapper = styled.div`
@@ -16,6 +20,13 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        flex-direction: column;
+        justify-content: center;
+        gap: 24px;
+        padding: 0 16px 0 16px;
+    }
 `;
 
 export const Container = styled.div`
@@ -27,17 +38,35 @@ export const LogoItems = styled.header`
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-right: 90px;
+    margin-right: 80px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        margin-right: 19px;
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        gap: 8px;
+    }
 `;
 
 export const LogoIcon = styled(Logo)`
-    /* later making it smaller for mobile users */
+    height: auto;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        width: 17px;
+    }
 `;
 
 export const LogoName = styled.span`
     font-weight: 500;
     font-size: 24px;
-    color: white;
+    color: ${({ theme }) => theme.colors.white};
+    line-height: 40px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        font-size: 13px;
+        line-height: 1.3;
+    }
 `;
 
 export const NavigationList = styled.ul`
@@ -45,37 +74,65 @@ export const NavigationList = styled.ul`
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 10px;
+    gap: 16px;
     align-items: center;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        gap: 12px;
+    }
 `;
 
 export const NavigationItem = styled.li`
     padding: 8px 24px 8px 24px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        padding: 8px 12px 8px 12px;
+    }
 `;
 
 export const StyledNavLink = styled.a`
     text-transform: uppercase;
-    color: white;
+    color: ${({ theme }) => theme.colors.white};
     font-weight: 600;
     font-size: 14px;
+    line-height: 1.5;
+    vertical-align: middle;
+    
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        font-size: 12px;
+    }
 `;
 
 export const SearchBox = styled.div`
     width: 33%;
     height: 48px;
-    border: 1px solid rgb(228, 230, 240);
+    border: 1px solid ${({ theme }) => theme.colors.mystic};
     border-radius: 33px;
-    background-color: white;
+    background-color: ${({ theme }) => theme.colors.white};
     display: flex;
     align-items: center;
 
     &::placeholder && {
-        color: rgb(126, 131, 154);
+        color: ${({ theme }) => theme.colors.waterloo};
     };
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        width: auto;
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+        width: 100%
+    }
 `;
 
 export const SearchIcon = styled(Search)`
     margin-left: 24px;
+    height: auto;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+        width: 16px;
+        margin-left: 16px;
+    }
 `;
 
 export const SearchBar = styled.input`
@@ -86,4 +143,11 @@ export const SearchBar = styled.input`
     border-radius: 33px;
     border: none;
     outline: none;
+    line-height: 1.5;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+        font-size: 13px;
+        line-height: 1.3;
+        padding: 8px 13px;
+    }
 `;
