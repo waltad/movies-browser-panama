@@ -13,7 +13,7 @@ function App() {
       <NoResults />
       <ErrorMessage />
       <PersonTile />
-      <Pagination />
+      {/* <Pagination /> */}
     </>
   );
 }
