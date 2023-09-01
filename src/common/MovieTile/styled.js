@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 8px;
 `;
 
@@ -60,10 +61,27 @@ export const Tag = styled.div`
 `;
 
 export const Rating = styled.div`
-  width: 140px;
-  height: 24px;
-  top: 610px;
-  left: 16px;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: row;
   gap: 12px;
+  height: 24px;
+  margin: 0 16px 16px 16px;
+`;
 
+export const Star = styled.img`
+  width: 24px;
+  height: 24px;
+`;
+
+export const Value = styled.div`
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+`;
+
+export const Votes = styled.div`
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
 `;

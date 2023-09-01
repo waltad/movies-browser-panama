@@ -1,5 +1,6 @@
-import { Description, Poster, Wrapper, Title, Year, Tags, Tag } from "./styled";
+import { Description, Poster, Wrapper, Title, Year, Tags, Tag, Rating, Star, Value, Votes } from "./styled";
 import noPoster from "../../images/Movie.png";
+import star from "../../images/Star.png";
 
 export const MovieTitle = () => {
   return (
@@ -14,7 +15,11 @@ export const MovieTitle = () => {
           <Tag>Drama</Tag>
         </Tags>
       </Description>
-      
+      <Rating>
+        <Star src={star} alt="star"/>
+        <Value>7.8</Value>
+        <Votes>35 Votes</Votes>
+      </Rating>
     </Wrapper>
   )
 };
