@@ -47,9 +47,9 @@ export const Subheading = styled.h2`
 
 export const Button = styled.a`
     padding: 16px 24px;
-    background-color: rgb(0, 68, 204);
+    background-color: ${({ theme }) => theme.colors.scienceBlue};
     border-radius: 5px;
-    color: white;
+    color: ${({ theme }) => theme.colors.white};
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;

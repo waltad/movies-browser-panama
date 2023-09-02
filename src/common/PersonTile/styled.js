@@ -3,8 +3,8 @@ import { styled } from "styled-components";
 export const Container = styled.article`
     width: 208px;
     height: 339px;
-    background-color: white;
-    box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.5);
+    background-color: ${({ theme }) => theme.colors.white};
+    box-shadow: ${({ theme }) => theme.personTileShadow};
     padding: 16px;
     display: flex;
     flex-direction: column;
@@ -49,7 +49,7 @@ export const Name = styled.header`
 `;
 
 export const AdditionalInfo = styled.span`
-    color: rgb(126, 131, 154);
+    color: ${({ theme }) => theme.colors.waterloo};
     font-size: 18px;
     line-height: 27px;
 
