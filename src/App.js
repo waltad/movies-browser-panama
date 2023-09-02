@@ -1,3 +1,4 @@
+import { MovieTitle } from "./common/MovieTile";
 import { Navigation } from "./common/Navigation";
 import { Pagination } from "./common/Pagination";
 import { PersonTile } from "./common/PersonTile";
@@ -9,6 +10,7 @@ function App() {
   return (
     <>
       <Navigation />
+      <MovieTitle />
       <LoadingIcon />
       <NoResults />
       <ErrorMessage />
