@@ -5,27 +5,19 @@ export const Wrapper = styled.div`
   height: 650px;
   border-radius: 5px;
   box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.5);
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
-  gap: 8px;
 `;
 
 export const Poster = styled.img`
-  display: block;
   width: 292px;
   height: 434px;
-  margin-top: 16px;
   border-radius: 5px;
 `;
 
-export const Description = styled.div`
-  width: 292px;
-`;
-
 export const Title = styled.div`
-  width: 292px;
   font-size: 22px;
   font-weight: 500;
   line-height: 1.3;
@@ -38,9 +30,10 @@ export const Year = styled.div`
   font-weight: 400;
   line-height: 1.5;
   color: grey;
+  margin: 8px 0 0 0;
 `;
 
-export const Tags = styled.div`
+export const Genres = styled.div`
   width: 279px;
   height: 36px;
   display: flex;
@@ -49,7 +42,7 @@ export const Tags = styled.div`
   margin: 8px 0;
 `;
 
-export const Tag = styled.div`
+export const Genre = styled.div`
   height: 36px;
   padding: 8px 16px 8px 16px;
   border-radius: 5px;
@@ -66,7 +59,6 @@ export const Rating = styled.div`
   flex-direction: row;
   gap: 12px;
   height: 24px;
-  margin: 0 16px 16px 16px;
 `;
 
 export const Star = styled.img`
@@ -84,4 +76,5 @@ export const Votes = styled.div`
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
+  color: grey;
 `;
