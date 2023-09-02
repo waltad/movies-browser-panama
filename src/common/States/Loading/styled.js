@@ -17,5 +17,6 @@ export const Spinner = styled(Loading)`
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
         width: 35px;
+        margin-top: 24px;
     }
 `;
