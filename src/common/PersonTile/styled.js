@@ -9,12 +9,24 @@ export const Container = styled.article`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+        width: 136px;
+        height: 245px;
+        border-radius: 5px;
+        padding: 8px;
+    }
 `;
 
 export const ImageBox = styled.div`
     width: 176px;
     height: 231px;
     border-radius: 5px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+        width: 120px;
+        height: 178px;
+    }
 `;
 
 export const Image = styled.img`
@@ -29,9 +41,20 @@ export const Name = styled.header`
     font-size: 22px;
     font-weight: 500;
     line-height: 1.3;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+        font-size: 14px;
+        margin: 8px 0;
+    }
 `;
 
 export const AdditionalInfo = styled.span`
     color: rgb(126, 131, 154);
     font-size: 18px;
+    line-height: 27px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+        font-size: 13px;
+        line-height: 1.3;
+    }
 `;
