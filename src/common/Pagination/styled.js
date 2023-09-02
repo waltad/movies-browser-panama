@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ReactComponent as prevArrow } from "../../images/prevArrow.svg";
 import { ReactComponent as nextArrow } from "../../images/nextArrow.svg";
 
@@ -19,20 +19,46 @@ export const Button = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-right: 8px;
+  }
 `;
 
 export const PrevArrowIcon = styled(prevArrow)`
-  margin: 0 4px;
+  margin: 0 4px 0 4px;
   color: ${({ theme }) => theme.colors.scienceBlue};
+  ${({ ismobile }) =>
+    ismobile &&
+    css`
+      display: none;
+    `};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: block;
+  }
 `;
 
 export const NextArrowIcon = styled(nextArrow)`
-  margin: 0 4px;
+  margin: 0 4px 0 4px;
   color: ${({ theme }) => theme.colors.scienceBlue};
+  ${({ ismobile }) =>
+    ismobile &&
+    css`
+      display: none;
+    `};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: block;
+  }
 `;
 
 export const ButtonText = styled.p`
-  margin: 0 4px;
+  margin: 0 4px 0 4px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
 `;
 
 export const PageCounter = styled.div`
@@ -40,12 +66,25 @@ export const PageCounter = styled.div`
   color: ${({ theme }) => theme.colors.waterloo};
   font-size: 16px;
   line-height: 150%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 10px;
+    line-height: 24px;
+    margin: 0 8px 0 8px;
+  }
 `;
 
 export const PageNumbers = styled.span`
-  margin: 0 8px;
+  margin: 0 8px 0 8px;
   color: ${({ theme }) => theme.colors.woodSmoke};
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 24px;
+    margin: 0 8px 0 8px;
+  }
 `;
