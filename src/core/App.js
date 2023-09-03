@@ -1,4 +1,4 @@
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import PopularPeople from "../features/popularPeople/PopularPeople";
 import BrowseMovies from "../features/browseMovies/BrowseMovies";
 import { Navigation } from "../common/Navigation";
@@ -14,6 +14,9 @@ function App() {
           </Route>
           <Route path="/people">
             <PopularPeople />
+          </Route>
+          <Route path="/">
+            <Redirect to="/movies" />
           </Route>
         </Switch>
       </HashRouter>
