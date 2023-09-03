@@ -1,4 +1,3 @@
-import { Navigation } from "../../common/Navigation";
 import { MovieTitle } from "../../common/MovieTile";
 import { Pagination } from "../../common/Pagination";
 import { PersonTile } from "../../common/PersonTile";
@@ -9,8 +8,7 @@ import { NoResults } from "../../common/States/NoResults";
 const BrowseMovies = () => {
   return (
     <>
-      <Navigation />
-      <p>Browse Movies</p>
+      <p>Browse Movies (NYI)</p>
       <MovieTitle />
       <LoadingIcon />
       <NoResults />
