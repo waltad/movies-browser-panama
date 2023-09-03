@@ -6,8 +6,6 @@ import { PersonTile } from "../../common/PersonTile";
 import { ErrorMessage } from "../../common/States/Error";
 import { LoadingIcon } from "../../common/States/Loading";
 import { NoResults } from "../../common/States/NoResults";
-import MovieDetails from "../movieDetails/MovieDetails";
-import PersonDetails from "../personDetails/PersonDetails";
 import PopularPeople from "../popularPeople/PopularPeople";
 
 function App() {
@@ -18,12 +16,6 @@ function App() {
           <ul>
             <li>
               <Link to="/home">Browse Movies</Link>
-            </li>
-            <li>
-              <Link to="/mDetails">Movie Details</Link>
-            </li>
-            <li>
-              <Link to="/pDetails">Person Details</Link>
             </li>
             <li>
               <Link to="/popular">Popular People</Link>
@@ -38,12 +30,6 @@ function App() {
               <ErrorMessage />
               <PersonTile />
               <Pagination />
-            </Route>
-            <Route path="/mDetails">
-              <MovieDetails />
-            </Route>
-            <Route path="/pDetails">
-              <PersonDetails />
             </Route>
             <Route path="/popular">
               <PopularPeople />
