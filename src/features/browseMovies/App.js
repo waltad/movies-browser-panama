@@ -1,4 +1,4 @@
-import { HashRouter, Link, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import { MovieTitle } from "../../common/MovieTile";
 import { Navigation } from "../../common/Navigation";
 import { Pagination } from "../../common/Pagination";
@@ -12,30 +12,20 @@ function App() {
   return (
     <>
       <HashRouter>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/home">Browse Movies</Link>
-            </li>
-            <li>
-              <Link to="/popular">Popular People</Link>
-            </li>
-          </ul>
-          <Switch>
-            <Route path="/home">
-              <Navigation />
-              <MovieTitle />
-              <LoadingIcon />
-              <NoResults />
-              <ErrorMessage />
-              <PersonTile />
-              <Pagination />
-            </Route>
-            <Route path="/popular">
-              <PopularPeople />
-            </Route>
-          </Switch>
-        </nav>
+        <Navigation />
+        <Switch>
+          <Route path="/movies">
+            <MovieTitle />
+            <LoadingIcon />
+            <NoResults />
+            <ErrorMessage />
+            <PersonTile />
+            <Pagination />
+          </Route>
+          <Route path="/people">
+            <PopularPeople />
+          </Route>
+        </Switch>
       </HashRouter>
     </>
   );
