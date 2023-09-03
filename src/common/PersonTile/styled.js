@@ -51,7 +51,8 @@ export const Name = styled.header`
 export const AdditionalInfo = styled.span`
     color: ${({ theme }) => theme.colors.waterloo};
     font-size: 18px;
-    line-height: 27px;
+    line-height: 1.5;
+    font-weight: 400;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
         font-size: 13px;
