@@ -1,10 +1,7 @@
-import { Navigation } from "../../common/Navigation";
-
 const MovieDetails = () => {
   return (
     <>
-      <Navigation />
-      <p>Popular people</p>
+      <p>Popular people (NYI)</p>
     </>
   );
 };
