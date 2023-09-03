@@ -11,6 +11,12 @@ export const Spinner = styled(Loading)`
         }
     }
 
+    height: auto;
     animation: rotate 2s linear infinite;
     margin-top: 120px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+        width: 35px;
+        margin-top: 24px;
+    }
 `;
