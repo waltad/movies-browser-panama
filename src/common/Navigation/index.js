@@ -25,10 +25,10 @@ export const Navigation = () => {
                     </LogoItems>
                     <NavigationList>
                         <NavigationItem>
-                            <StyledNavLink>Movies</StyledNavLink>
+                            <StyledNavLink to="/movies">Movies</StyledNavLink>
                         </NavigationItem>
                         <NavigationItem>
-                            <StyledNavLink>People</StyledNavLink>
+                            <StyledNavLink to="/people">People</StyledNavLink>
                         </NavigationItem>
                     </NavigationList>
                 </Container>

@@ -1,6 +1,9 @@
 import { styled } from "styled-components";
 import { ReactComponent as Logo } from "../../images/Logo.svg";
 import { ReactComponent as Search } from "../../images/Search.svg";
+import { NavLink } from "react-router-dom";
+
+const activeClassName = "active";
 
 export const NavigationBar = styled.nav`
     width: 100%;
@@ -83,23 +86,30 @@ export const NavigationList = styled.ul`
 `;
 
 export const NavigationItem = styled.li`
-    padding: 8px 24px 8px 24px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        padding: 8px 12px 8px 12px;
-    }
 `;
 
-export const StyledNavLink = styled.a`
+export const StyledNavLink = styled(NavLink).attrs(() => ({
+    activeClassName,
+}))`
     text-transform: uppercase;
     color: ${({ theme }) => theme.colors.white};
     font-weight: 600;
     font-size: 14px;
     line-height: 1.5;
     vertical-align: middle;
+    text-decoration: none;
+    padding: 8px 24px 8px 24px;
+    border-radius: 24px;
     
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         font-size: 12px;
+        padding: 8px 12px 8px 12px;
+        border-radius: 29px;
+    }
+
+    &.${activeClassName} {
+        outline: 1px solid ${({ theme }) => theme.colors.white};
     }
 `;
 
