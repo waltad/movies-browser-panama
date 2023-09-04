@@ -102,14 +102,14 @@ export const Rating = styled.div`
   align-self: flex-start;
   display: flex;
   flex-direction: row;
-  gap: 12px;
+  column-gap: 12px;
   height: 24px;
   margin: 16px 0 0 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
     grid-column: 2;
     grid-row: 2;
-    gap: 8px;
+    column-gap: 8px;
   }
 `;
 
