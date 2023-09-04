@@ -4,7 +4,7 @@ export const Container = styled.article`
     width: 208px;
     height: 339px;
     background-color: ${({ theme }) => theme.colors.white};
-    box-shadow: ${({ theme }) => theme.personTileShadow};
+    box-shadow: ${({ theme }) => theme.tileShadow};
     padding: 16px;
     display: flex;
     flex-direction: column;
