@@ -14,7 +14,7 @@ import {
 import noPoster from "../../images/Movie.png";
 import star from "../../images/Star.png";
 
-export const MovieTitle = () => {
+export const MovieTile = () => {
   return (
     <Wrapper>
       <Poster src={noPoster} alt="" />
@@ -32,7 +32,7 @@ export const MovieTitle = () => {
       <Rating>
         <Star src={star} alt="star" />
         <Value>7.8</Value>
-        <Votes>35 Votes</Votes>
+        <Votes>35 votes</Votes>
       </Rating>
     </Wrapper>
   );
