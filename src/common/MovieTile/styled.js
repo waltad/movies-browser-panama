@@ -4,7 +4,8 @@ export const Wrapper = styled.div`
   width: 324px;
   height: 650px;
   border-radius: 5px;
-  box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.5);
+  background-color: ${({theme}) => theme.colors.white};
+  box-shadow: ${({theme}) => theme.tileShadow};
   padding: 16px;
   display: grid;
   grid-template-columns: auto;
@@ -59,7 +60,7 @@ export const Year = styled.div`
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
-  color: grey;
+  color: ${({theme}) => theme.colors.waterloo};
   margin: 8px 0 0 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
@@ -89,7 +90,7 @@ export const Genre = styled.div`
   font-weight: 400;
   line-height: 1.4;
   text-align: left;
-  background-color: #e4e6f0;
+  background-color: ${({ theme }) => theme.colors.mystic};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
     height: 19px;
@@ -137,7 +138,7 @@ export const Votes = styled.div`
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
-  color: grey;
+  color: ${({ theme }) => theme.colors.waterloo};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
     font-size: 13px;
