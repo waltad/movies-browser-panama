@@ -6,15 +6,40 @@ export const Wrapper = styled.div`
   border-radius: 5px;
   box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.5);
   padding: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr 3fr;
+    column-gap: 16px;
+    width: 288px;
+    height: 201px;
+  }
 `;
 
 export const Poster = styled.img`
   width: 292px;
   height: 434px;
   border-radius: 5px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    width: 114px;
+    height: 169px;
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+`;
+
+export const MainInfo = styled.div`
+  height: 134px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    height: auto;
+    grid-column: 2;
+    grid-row: 1;
+  }
 `;
 
 export const Title = styled.div`
@@ -23,6 +48,11 @@ export const Title = styled.div`
   line-height: 1.3;
   text-align: left;
   margin: 8px 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    font-size: 16px;
+    margin: 0;
+  }
 `;
 
 export const Year = styled.div`
@@ -31,6 +61,10 @@ export const Year = styled.div`
   line-height: 1.5;
   color: grey;
   margin: 8px 0 0 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    font-size: 13px;
+  }
 `;
 
 export const Genres = styled.div`
@@ -39,7 +73,12 @@ export const Genres = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 8px 0;
+  margin: 8px 0 0 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    max-width: 126px;
+    height: auto;
+  }
 `;
 
 export const Genre = styled.div`
@@ -48,9 +87,15 @@ export const Genre = styled.div`
   border-radius: 5px;
   font-size: 14px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 1.4;
   text-align: left;
-  background-color: #E4E6F0;
+  background-color: #e4e6f0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    height: 19px;
+    padding: 4px 8px 4px 8px;
+    font-size: 10px;
+  }
 `;
 
 export const Rating = styled.div`
@@ -59,17 +104,33 @@ export const Rating = styled.div`
   flex-direction: row;
   gap: 12px;
   height: 24px;
+  margin: 16px 0 0 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    grid-column: 2;
+    grid-row: 2;
+    gap: 8px;
+  }
 `;
 
 export const Star = styled.img`
   width: 24px;
   height: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    width: 16px;
+    height: 16px;
+  }
 `;
 
 export const Value = styled.div`
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    font-size: 13px;
+  }
 `;
 
 export const Votes = styled.div`
@@ -77,4 +138,8 @@ export const Votes = styled.div`
   font-weight: 400;
   line-height: 1.5;
   color: grey;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    font-size: 13px;
+  }
 `;
