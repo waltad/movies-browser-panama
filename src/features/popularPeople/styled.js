@@ -21,3 +21,4 @@ export const PeopleList = styled.ul`
     gap: 24px;
     padding: 12px;
 `;
+

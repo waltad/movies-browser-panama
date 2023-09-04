@@ -1,13 +1,4 @@
-import {
-  Wrapper,
-  Header,
-  PeopleList,
-  Item,
-  Tile,
-  Poster,
-  Title,
-  StyledNavLink,
-} from "./styled";
+import { Wrapper, Header, PeopleList, Poster, StyledNavLink } from "./styled";
 import { Pagination } from "../../common/Pagination";
 import { PersonTile } from "../../common/PersonTile";
 
