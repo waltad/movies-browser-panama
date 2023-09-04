@@ -4,8 +4,8 @@ export const Wrapper = styled.div`
   width: 324px;
   height: 650px;
   border-radius: 5px;
-  background-color: ${({theme}) => theme.colors.white};
-  box-shadow: ${({theme}) => theme.tileShadow};
+  background-color: ${({ theme }) => theme.colors.white};
+  box-shadow: ${({ theme }) => theme.tileShadow};
   padding: 16px;
   display: grid;
   grid-template-columns: auto;
@@ -60,7 +60,7 @@ export const Year = styled.div`
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
-  color: ${({theme}) => theme.colors.waterloo};
+  color: ${({ theme }) => theme.colors.waterloo};
   margin: 8px 0 0 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
