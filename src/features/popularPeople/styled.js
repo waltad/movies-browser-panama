@@ -39,6 +39,11 @@ export const PeopleList = styled.ul`
   }
 `;
 
+export const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.black};
 
-
-
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    width: 100%;
+  }
+`;

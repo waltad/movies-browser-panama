@@ -1,6 +1,6 @@
-import { Wrapper, Header, PeopleList, Poster, StyledNavLink } from "./styled";
-import { Pagination } from "../../common/Pagination";
+import { Wrapper, Header, PeopleList, StyledNavLink } from "./styled";
 import { PersonTile } from "../../common/PersonTile";
+import { Pagination } from "../../common/Pagination";
 
 const PopularPeople = () => {
   return (
@@ -8,30 +8,9 @@ const PopularPeople = () => {
       <Wrapper>
         <Header>Popular people</Header>
         <PeopleList>
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
-          <PersonTile />
+          <StyledNavLink to="/default-path">
+            <PersonTile />
+          </StyledNavLink>
         </PeopleList>
         <Pagination />
       </Wrapper>
