@@ -21,14 +21,14 @@ const moviesSlice = createSlice({
         setLastPage: (state, { payload: totalPages }) => {
             state.page = totalPages;
         },
-        fetchPopularMovies: state => {
+        fetchPopular: state => {
             state.status = "loading";
         },
         setMoviesData: (state, { payload: data }) => {
             state.moviesData = data;
-            state.status = undefined;
+            state.status = "success";
         },
-        fetchPopularMoviesError: state => {
+        fetchPopularError: state => {
             state.status = "error";
         },
         setGenres: (state, { payload: genres }) => {
