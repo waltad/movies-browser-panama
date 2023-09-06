@@ -7,8 +7,6 @@ export const Wrapper = styled.div`
   margin-left: 14%;
   display: flex;
   flex-direction: column;
-  /* align-items: center;
-  flex-wrap: wrap; */
 `;
 
 export const Title = styled.div`
@@ -22,8 +20,6 @@ export const Title = styled.div`
 export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
+  justify-content: space-between;
   row-gap: 24px;
-  column-gap: 24px
-  `;
+`;
