@@ -1,23 +1,24 @@
-import { Navigation } from "../../common/Navigation";
+// import { Navigation } from "../../common/Navigation";
 import { Pagination } from "../../common/Pagination";
 import { MovieTile } from "../../common/MovieTile";
-import { Container, Title } from "./styled";
+import { Wrapper, Container, Title } from "./styled";
 
 const PopularMovies = () => {
   return (
     <>
-      <Navigation />
-      <Container>
+      <Wrapper>
         <Title>Popular Movies</Title>
-        <MovieTile />
-        <MovieTile />
-        <MovieTile />
-        <MovieTile />
-        <MovieTile />
-        <MovieTile />
-        <MovieTile />
-        <MovieTile />
-      </Container>
+        <Container>
+          <MovieTile />
+          <MovieTile />
+          <MovieTile />
+          <MovieTile />
+          <MovieTile />
+          <MovieTile />
+          <MovieTile />
+          <MovieTile />
+        </Container>
+      </Wrapper>
       <Pagination />
     </>
   );
