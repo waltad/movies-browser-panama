@@ -1,13 +1,34 @@
 import { styled } from "styled-components";
 
+export const Wrapped = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 56px;
+  margin-bottom: 24px;
+  margin-left: 8%;
+  margin-right: 8%;
+  justify-content: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    margin-top: 24px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 12px;
+    min-width: auto;
+  }
+`;
+
 export const Container = styled.div`
-  width: 1368px;
-  height: 1391px;
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-template-rows: auto auto auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1368px;
   row-gap: 24px;
-  column-gap: 24px
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    row-gap: 16px
+  }
 `;
 
 export const Title = styled.div`
@@ -15,6 +36,10 @@ export const Title = styled.div`
   font-weight: 600;
   line-height: 1.2;
   text-align: left;
-  grid-column: 1 / 5;
-  grid-row: 1;
+  margin-bottom: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
 `;
