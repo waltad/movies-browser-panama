@@ -1,12 +1,12 @@
 // import { Navigation } from "../../common/Navigation";
-import { Pagination } from "../../common/Pagination";
+// import { Pagination } from "../../common/Pagination";
 import { MovieTile } from "../../common/MovieTile";
-import { Wrapper, Container, Title } from "./styled";
+import { Container, Title, Wrapped } from "./styled";
 
 const PopularMovies = () => {
   return (
     <>
-      <Wrapper>
+      <Wrapped>
         <Title>Popular Movies</Title>
         <Container>
           <MovieTile />
@@ -18,8 +18,7 @@ const PopularMovies = () => {
           <MovieTile />
           <MovieTile />
         </Container>
-      </Wrapper>
-      <Pagination />
+      </Wrapped>
     </>
   );
 };
