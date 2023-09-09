@@ -1,22 +1,29 @@
-import { Wrapper, Header, PeopleList, StyledNavLink } from "./styled";
-import { PersonTile } from "../../common/PersonTile";
-import { Pagination } from "../../common/Pagination";
-import Content from "./Content";
+import { LoadingIcon } from "../../common/States/Loading";
+import { NoResults } from "../../common/States/NoResults";
+import { ErrorMessage } from "../../common/States/Error";
+import People from "./Content/people.js";
 
-const PopularPeople = () => {
-  return (
-    <>
-      <Wrapper>
-        <Header>Popular people</Header>
-        <PeopleList>
-          <StyledNavLink to="/personDetails">
-            <PersonTile />
-          </StyledNavLink>
-        </PeopleList>
-        <Pagination />
-      </Wrapper>
-    </>
-  );
+const PopularPeople = ({ status, data, error }) => {
+  return <People data={data} />;
+  switch (status) {
+    case "initial":
+      return null;
+
+    case "loading":
+      return <LoadingIcon />;
+
+    case "success":
+      return <People data={data} />;
+
+    case "noResults":
+      return <NoResults />;
+
+    case "error":
+      return <ErrorMessage>{error}</ErrorMessage>;
+
+    default:
+      throw new Error(`Incorrect status: ${status}`);
+  }
 };
 
 export default PopularPeople;
