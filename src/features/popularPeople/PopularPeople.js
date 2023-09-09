@@ -4,7 +4,7 @@ import { ErrorMessage } from "../../common/States/Error";
 import People from "./Content/people.js";
 
 const PopularPeople = ({ status, data, error }) => {
-  return <People data={data} />;
+  return <LoadingIcon />;
   switch (status) {
     case "initial":
       return null;
