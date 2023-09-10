@@ -24,8 +24,7 @@ const PopularPeople = () => {
   const peopleList = useSelector(selectPeopleList);
 
   useEffect(() => {
-    if (location.includes("movie"))
-      dispatch();
+    if (location.includes("movie")) dispatch();
     else dispatch(fetchPeople());
   }, []);
 
@@ -45,7 +44,11 @@ const PopularPeople = () => {
           <PeopleList>
             {peopleList.results.map((person) => (
               <StyledNavLink key={`${person.id}`} to="/personDetails">
-                <PersonTile />
+                <PersonTile
+                  name={person.name}
+                  profile_path={person.profile_parh}
+                  id={person.id}
+                />
               </StyledNavLink>
             ))}
           </PeopleList>
