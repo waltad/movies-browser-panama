@@ -3,27 +3,27 @@ import { NoResults } from "../../common/States/NoResults";
 import { ErrorMessage } from "../../common/States/Error";
 import People from "./Content/people.js";
 
-const PopularPeople = ({ status, data, error }) => {
-  return <People data={data} />
-  switch (status) {
-    case "initial":
-      return null;
+const PopularPeople = () => {
+  return <People />;
+  // switch (status) {
+  //   case "initial":
+  //     return null;
 
-    case "loading":
-      return <LoadingIcon />;
+  //   case "loading":
+  //     return <LoadingIcon />;
 
-    case "success":
-      return <People data={data} />;
+  //   case "success":
+  //     return <People data={data} />;
 
-    case "noResults":
-      return <NoResults />;
+  //   case "noResults":
+  //     return <NoResults />;
 
-    case "error":
-      return <ErrorMessage>{error}</ErrorMessage>;
+  //   case "error":
+  //     return <ErrorMessage>{error}</ErrorMessage>;
 
-    default:
-      throw new Error(`Incorrect status: ${status}`);
-  }
+  //   default:
+  //     throw new Error(`Incorrect status: ${status}`);
+  // }
 };
 
 export default PopularPeople;
