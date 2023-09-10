@@ -17,7 +17,7 @@ import { Pagination } from "../../../common/Pagination";
 import { LoadingIcon } from "../../../common/States/Loading";
 import { ErrorMessage } from "../../../common/States/Error";
 
-const People = () => {
+const PopularPeople = () => {
   const dispatch = useDispatch();
   const location = useLocation().pathname;
   const status = useSelector(selectPeopleStatus);
@@ -44,7 +44,7 @@ const People = () => {
           <Header>Popular people</Header>
           <PeopleList>
             {peopleList.results.map((person) => (
-              <StyledNavLink to="/personDetails">
+              <StyledNavLink key={`${person.id}`} to="/personDetails">
                 <PersonTile />
               </StyledNavLink>
             ))}
@@ -56,4 +56,4 @@ const People = () => {
   }
 };
 
-export default People;
+export default PopularPeople;
