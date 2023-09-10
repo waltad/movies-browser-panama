@@ -18,5 +18,6 @@ export const getGenresList = async () => {
     new Error(response.statusText);
   }
 
-  return await response.json();
+  const result = await response.json();
+  return result.genres;
 };
