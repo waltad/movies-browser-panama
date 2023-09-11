@@ -16,7 +16,7 @@ const PopularMovies = () => {
   const dispatch = useDispatch();
   const location = useLocation().pathname;
   const status = useSelector(selectStatus);
-  const popularMoviesList = useSelector(selectData);
+  const popularMovies = useSelector(selectData);
   const genres = useSelector(selectGenres);
 
   useEffect(() => {
@@ -37,14 +37,15 @@ const PopularMovies = () => {
         <Wrapped>
           <Title>Popular Movies</Title>
           <Container>
-            <MovieTile />
-            <MovieTile />
-            <MovieTile />
-            <MovieTile />
-            <MovieTile />
-            <MovieTile />
-            <MovieTile />
-            <MovieTile />
+            {popularMovies.map((movie) => (
+            <MovieTile
+              poster_path={movie.poster_path}
+              title={movie.title}
+              release_date={movie.release_date}
+              vote_average={movie.vote_average}
+              vote_count={movie.vote_count}
+            />
+            ))}
           </Container>
         </Wrapped>
       </>
