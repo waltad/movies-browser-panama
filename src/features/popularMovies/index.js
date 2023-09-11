@@ -9,7 +9,7 @@ import {
 import { MovieTile } from "../../common/MovieTile";
 import { ErrorMessage } from "../../common/States/Error";
 import { LoadingIcon } from "../../common/States/Loading";
-import { Container, Title, Wrapped } from "./styled";
+import { Container, StyledNavLink, Title, Wrapped } from "./styled";
 import { fetchPopularMovies } from "../moviesSlice";
 
 const PopularMovies = () => {
@@ -38,13 +38,17 @@ const PopularMovies = () => {
           <Title>Popular Movies</Title>
           <Container>
             {popularMovies.map((movie) => (
-            <MovieTile
-              poster_path={movie.poster_path}
-              title={movie.title}
-              release_date={movie.release_date}
-              vote_average={movie.vote_average}
-              vote_count={movie.vote_count}
-            />
+              <StyledNavLink key={`${movie.id}`} to="/movieDetails">
+                <MovieTile
+                  poster_path={movie.poster_path}
+                  title={movie.title}
+                  release_date={movie.release_date}
+                  vote_average={movie.vote_average}
+                  vote_count={movie.vote_count}
+                  genre_ids={movie.genre_ids}
+                  id={movie.id}
+                />
+              </StyledNavLink>
             ))}
           </Container>
         </Wrapped>

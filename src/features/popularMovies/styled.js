@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const Wrapped = styled.div`
   display: flex;
@@ -41,5 +42,14 @@ export const Title = styled.div`
     width: 288px;
     font-size: 18px;
     margin-bottom: 12px;
+  }
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.black};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    width: 100%;
   }
 `;
