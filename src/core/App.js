@@ -1,5 +1,5 @@
 import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
-import PopularPeople from "../features/popularPeople/PopularPeople";
+import PopularPeople from "../features/popularPeople/Content/people";
 import BrowseMovies from "../features/browseMovies/BrowseMovies";
 import PersonDetails from "../features/personDetails/PersonDetails";
 import { Navigation } from "../common/Navigation";
