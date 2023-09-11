@@ -37,10 +37,10 @@ export const MovieTile = ({ genre_ids, id, poster_path, title, release_date, vot
           {release_date ? release_date.slice(0, 4) : null}
         </Year>
         <Genres>
-          {/* {genres.filters(({ id }) => genre_ids.includes(id))} */}
-          <Genre>Action</Genre>
-          <Genre>Adventure</Genre>
-          <Genre>Drama</Genre>
+          {genre_ids.map((genreId) => {
+            const genre = genres.find((g) => g.id === genreId);
+            return <Genre key={genreId}>{genre ? genre.name : "Nieznany gatunek"}</Genre>;
+          })}
         </Genres>
       </MainInfo>
 
