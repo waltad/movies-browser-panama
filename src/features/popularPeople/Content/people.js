@@ -43,10 +43,10 @@ const PopularPeople = () => {
           <Header>Popular people</Header>
           <PeopleList>
             {peopleList.results.map((person) => (
-              <StyledNavLink key={`${person.id}`} to="/personDetails">
+              <StyledNavLink key={person.id} to="/personDetails">
                 <PersonTile
                   name={person.name}
-                  profile_path={person.profile_parh}
+                  profile_path={person.profile_path}
                   id={person.id}
                 />
               </StyledNavLink>
