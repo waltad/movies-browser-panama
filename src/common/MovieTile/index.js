@@ -20,7 +20,8 @@ const securyBaseUrl = "https://image.tmdb.org/t/p/";
 const posterSize = "w300";
 
 
-export const MovieTile = ({ genre_ids, id, poster_path, title, release_date, vote_average, vote_count }) => {
+export const MovieTile = ({ genre_ids, poster_path, title, release_date, vote_average, vote_count }) => {
+  
   const genres = useSelector(selectGenres);
 
   return (

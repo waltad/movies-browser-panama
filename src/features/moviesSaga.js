@@ -1,4 +1,4 @@
-import { takeEvery, call, put, all, throttle, delay } from "redux-saga/effects";
+import { takeEvery, call, put, all, delay } from "redux-saga/effects";
 import { fetchPopularMovies, fetchPopularMoviesError, setGenres, setMoviesData } from "./moviesSlice";
 import { getPopularMovies } from "./getPopularMovies";
 import { getGenresList } from "./getGenresList";
