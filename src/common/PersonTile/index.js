@@ -2,7 +2,7 @@ import { Container, ImageBox, Image, Name, AdditionalInfo } from "./styled";
 import { imagesAPIw200 } from "../../apiURL";
 import anonymous from "../../images/Picture.png";
 
-export const PersonTile = ({ name, profile_path }) => {
+export const PersonTile = ({ name, profile_path, additionalContent }) => {
   return (
     <Container>
       <ImageBox>
@@ -11,8 +11,8 @@ export const PersonTile = ({ name, profile_path }) => {
           alt="name"
         />
       </ImageBox>
-      <Name>{name}</Name> {/*later using person.name */}
-      <AdditionalInfo>Additional Info</AdditionalInfo>
+      <Name>{name}</Name>
+      <AdditionalInfo>{additionalContent}</AdditionalInfo>
     </Container>
   );
 };
