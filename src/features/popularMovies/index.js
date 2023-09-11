@@ -11,6 +11,7 @@ import { ErrorMessage } from "../../common/States/Error";
 import { LoadingIcon } from "../../common/States/Loading";
 import { MovieList, StyledNavLink, Title, Wrapped } from "./styled";
 import { fetchPopularMovies } from "../moviesSlice";
+import { Pagination } from "../../common/Pagination";
 
 const PopularMovies = () => {
   const dispatch = useDispatch();
@@ -45,13 +46,14 @@ const PopularMovies = () => {
                   release_date={movie.release_date}
                   vote_average={movie.vote_average}
                   vote_count={movie.vote_count}
-                  genre_ids={movie.genre_ids}
+                  genre_ids={(movie.genre_ids).slice(0, 2)}
                   id={movie.id}
                 />
               </StyledNavLink>
             ))}
           </MovieList>
         </Wrapped>
+        <Pagination />
       </>
     );
   }
