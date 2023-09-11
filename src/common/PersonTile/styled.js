@@ -10,7 +10,7 @@ export const Container = styled.article`
     flex-direction: column;
     align-items: center;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         width: 136px;
         height: 245px;
         border-radius: 5px;
@@ -23,7 +23,7 @@ export const ImageBox = styled.div`
     height: 231px;
     border-radius: 5px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         width: 120px;
         height: 178px;
     }
@@ -42,7 +42,7 @@ export const Name = styled.header`
     font-weight: 500;
     line-height: 1.3;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         font-size: 14px;
         margin: 8px 0;
     }
@@ -54,7 +54,7 @@ export const AdditionalInfo = styled.span`
     line-height: 1.5;
     font-weight: 400;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         font-size: 13px;
         line-height: 1.3;
     }

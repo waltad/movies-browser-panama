@@ -1,4 +1,4 @@
-const MovieDetails = () => {
+const PersonDetails = () => {
   return (
     <>
       <p>Person Details</p>
@@ -6,4 +6,4 @@ const MovieDetails = () => {
   );
 };
 
-export default MovieDetails;
+export default PersonDetails;

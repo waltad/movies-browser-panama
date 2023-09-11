@@ -1,6 +1,6 @@
+import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import {
     LogoIcon,
-    LogoItems,
     LogoName,
     NavigationBar,
     NavigationItem,
@@ -10,19 +10,23 @@ import {
     StyledNavLink,
     Container,
     SearchBox,
-    SearchIcon
+    SearchIcon,
+    LogoItemsLink
 } from "./styled";
 
-
 export const Navigation = () => {
+    const location = useLocation();
+    const placeholder = location.pathname.startsWith("/movies")
+        ? "Search for movies..." : "Search for people...";
+
     return (
         <NavigationBar>
             <Wrapper>
                 <Container>
-                    <LogoItems>
+                    <LogoItemsLink to="/movies">
                         <LogoIcon />
                         <LogoName>Movies&nbsp;Browser</LogoName>
-                    </LogoItems>
+                    </LogoItemsLink>
                     <NavigationList>
                         <NavigationItem>
                             <StyledNavLink to="/movies">Movies</StyledNavLink>
@@ -34,9 +38,9 @@ export const Navigation = () => {
                 </Container>
                 <SearchBox>
                     <SearchIcon />
-                    <SearchBar placeholder="Search for movies..."/>
+                    <SearchBar placeholder={placeholder} />
                 </SearchBox>
             </Wrapper>
-        </NavigationBar>
+        </NavigationBar >
     );
 };

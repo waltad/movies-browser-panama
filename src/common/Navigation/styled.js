@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import { ReactComponent as Logo } from "../../images/Logo.svg";
 import { ReactComponent as Search } from "../../images/Search.svg";
 import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const activeClassName = "active";
 
@@ -35,13 +36,20 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
     display: flex;
     align-items: center;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        width: 100%;
+        justify-content: space-between;
+    }
+
 `;
 
-export const LogoItems = styled.header`
+export const LogoItemsLink = styled(Link)`
     display: flex;
     align-items: center;
     gap: 12px;
     margin-right: 80px;
+    text-decoration: none;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         margin-right: 19px;
@@ -109,7 +117,11 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
     }
 
     &.${activeClassName} {
-        outline: 1px solid ${({ theme }) => theme.colors.white};
+        border: 1px solid ${({ theme }) => theme.colors.white};
+    }
+
+    &:hover {
+        border-bottom: 2px solid ${({ theme }) => theme.colors.white}; 
     }
 `;
 
@@ -127,11 +139,7 @@ export const SearchBox = styled.div`
     };
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        width: auto;
-    }
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
-        width: 100%
+        width: 100%;
     }
 `;
 
