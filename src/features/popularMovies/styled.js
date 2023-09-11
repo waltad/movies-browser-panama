@@ -14,7 +14,7 @@ export const Wrapped = styled.div`
   }
 `;
 
-export const Container = styled.div`
+export const MovieList = styled.div`
   width: 1368px;
   display: flex;
   flex-wrap: wrap;
