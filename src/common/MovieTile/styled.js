@@ -69,11 +69,11 @@ export const Year = styled.div`
 `;
 
 export const Genres = styled.div`
-  width: 279px;
-  height: 36px;
+  width: 292px;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  column-gap: 8px;
+  row-gap: 2px;
   margin: 8px 0 0 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
