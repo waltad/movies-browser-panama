@@ -1,7 +1,10 @@
+import { Wrapper } from "./styled";
+import PersonDetailTile from "../../common/PersonDetailTile";
+
 const PersonDetails = () => {
   return (
     <>
-      <p>Person Details</p>
+        <PersonDetailTile />
     </>
   );
 };
