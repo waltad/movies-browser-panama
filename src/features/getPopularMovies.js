@@ -19,5 +19,5 @@ export const getPopularMovies = async () => {
   }
   
   const result = await response.json();
-  return result.results;
+  return result;
 };
