@@ -3,25 +3,24 @@ import { createSlice } from "@reduxjs/toolkit";
 const peopleSlice = createSlice({
   name: "people",
   initialState: {
-    peopleList: null,
-    status: null,
+    peopleList: [],
+    status: undefined,
   },
 
   reducers: {
-    fetchPeople: (page) => ({
-      status: "loading",
-      peopleList: null,
-      page,
-    }),
-    fetchPeopleSuccess: (_, { payload: peopleList }) => ({
-      status: "success",
-      peopleList,
-      page: peopleList.page,
-    }),
-    fetchPeopleError: () => ({
-      status: "error",
-      peopleList: null,
-    }),
+    fetchPeople: state => {
+      state.status = "loading";
+    },
+    fetchPeopleSuccess: (state, { payload: peopleList }) => {
+      state.peopleList = peopleList;
+      state.status = "success";
+    },
+    fetchPeopleError: state => {
+      state.status = "error";
+    },
+    fetchSearchPeople: state => {
+      state.status = "loading";
+    },
   },
 });
 
@@ -30,10 +29,10 @@ export const {
   fetchPeopleSuccess,
   fetchPeopleError,
   fetchPeoplePageModifer,
+  fetchSearchPeople
 } = peopleSlice.actions;
 
 export const selectPeopleState = (state) => state.people;
 export const selectPeopleList = (state) => selectPeopleState(state).peopleList;
 export const selectPeopleStatus = (state) => selectPeopleState(state).status;
-export const selectPeoplePage = (state) => selectPeopleState(state).page;
 export default peopleSlice.reducer;
