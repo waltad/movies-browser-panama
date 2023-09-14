@@ -8,10 +8,8 @@ export const Wrapper = styled.div`
     gap: 24px;
     padding: 0 20px;
     text-align: center;
-    margin-top: 56px;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
         gap: 14px;
-        margin-top: 24px;
     }
 `;
