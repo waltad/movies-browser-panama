@@ -49,6 +49,11 @@ export const Title = styled.div`
   line-height: 1.3;
   text-align: left;
   margin: 8px 0;
+  overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
     font-size: 16px;
