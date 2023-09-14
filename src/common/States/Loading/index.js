@@ -1,9 +1,8 @@
 import { Wrapper } from "../styled";
 import { Spinner } from "./styled";
 
-export const LoadingIcon = ({ title }) => (
+export const LoadingIcon = () => (
     <Wrapper>
-        {title}
         <Spinner />
     </Wrapper>
 );
