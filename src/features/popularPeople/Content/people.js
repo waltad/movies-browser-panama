@@ -46,9 +46,10 @@ const PopularPeople = () => {
       );
     case "loading":
       return query ? (
-        <LoadingIcon title={
+        <>
           <Header>Search results for "{query}"</Header>
-        } />
+          <LoadingIcon />
+        </>
       ) : (
         <LoadingIcon />
       )

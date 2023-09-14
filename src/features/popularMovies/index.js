@@ -46,9 +46,10 @@ const PopularMovies = () => {
       );
     case "loading":
       return query ? (
-        <LoadingIcon title={
+        <Wrapped>
           <Title>Search results for "{query}"</Title>
-        } />
+          <LoadingIcon />
+        </Wrapped>
       ) : (
         <LoadingIcon />
       )
