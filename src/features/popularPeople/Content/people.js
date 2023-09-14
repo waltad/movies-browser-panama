@@ -46,10 +46,10 @@ const PopularPeople = () => {
       );
     case "loading":
       return query ? (
-        <>
+        <Wrapper>
           <Header>Search results for "{query}"</Header>
           <LoadingIcon />
-        </>
+        </Wrapper>
       ) : (
         <LoadingIcon />
       )
@@ -65,7 +65,7 @@ const PopularPeople = () => {
         return (
           <>
             <Wrapper>
-              <Header>{`Search results for ${query} (${total_results})`}</Header>
+              <Header>{`Search results for "${query}" (${total_results})`}</Header>
               <PeopleList>
                 {peopleList.map((person) => (
                   <StyledNavLink key={person.id} to="/personDetails">
