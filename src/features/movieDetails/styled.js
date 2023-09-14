@@ -46,9 +46,24 @@ export const MovieSection = styled(Section)`
   background-color: ${({theme}) => theme.colors.white};
 `;
 
+export const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 8px, 0px, 8px, 0px;
+  gap: 24px;
+
+`;
+
 export const Title = styled.div`
   font-size: 36px;
   font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+`;
+
+export const Year = styled.div`
+  font-size: 22px;
+  font-weight: 400;
   line-height: 1.2;
   text-align: left;
 `;
