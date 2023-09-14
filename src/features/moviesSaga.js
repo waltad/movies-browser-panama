@@ -22,7 +22,7 @@ function* fetchSearchMoviesHandler({ payload: options }) {
     try {
         yield delay(1000);
         const [popularMovies, genres] = yield all([
-            call(getSearchResults, options.query, options.page),
+            call(getSearchResults, options.query, options.page, options.type),
             call(getGenresList),
         ]);
         yield put(setMoviesData(popularMovies));
