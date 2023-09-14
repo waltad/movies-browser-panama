@@ -1,10 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import {
   selectStatus,
   selectData,
-  selectGenres,
   fetchSearchMovies,
   selectPage
 } from "../moviesSlice";
@@ -20,11 +18,9 @@ import { NoResults } from "../../common/States/NoResults";
 
 const PopularMovies = () => {
   const dispatch = useDispatch();
-  const location = useLocation().pathname;
   const status = useSelector(selectStatus);
   const data = useSelector(selectData);
   const popularMovies = data.results || [];
-  const genres = useSelector(selectGenres);
   const query = useQueryParameter(searchQueryParamName);
   const totalResults = data.total_results;
   const page = useSelector(selectPage);
@@ -32,7 +28,8 @@ const PopularMovies = () => {
   useEffect(() => {
     const options = {
       query: query,
-      page: page
+      page: page,
+      type: "movie"
     };
 
     if (query) {
@@ -112,6 +109,10 @@ const PopularMovies = () => {
           </>
         )
       }
+      default:
+        return (
+          <ErrorMessage />
+        );
   }
 };
 
