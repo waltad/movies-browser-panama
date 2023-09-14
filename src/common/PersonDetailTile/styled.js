@@ -10,11 +10,11 @@ export const DetailsTile = styled.article`
   display: flex;
   padding: 40px;
   align-items: flex-start;
-  gap: 40px;
+  /* gap: 40px; */
   background-color: ${({ theme }) => theme.colors.white};
   padding: 40px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-  max-width: 100%;
+  max-width: 1288px;
   margin-top: 56px;
   align-self: center;
 `;
@@ -45,6 +45,13 @@ export const Title = styled.h1`
 export const DetailsLine = styled.div`
   display: flex;
   flex-direction: row;
+`;
+
+export const Datails = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* gap: 24px; */
 `;
 
 export const Label = styled.p`
