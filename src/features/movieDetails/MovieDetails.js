@@ -1,5 +1,5 @@
 // import { useDispatch } from "react-redux";
-import { MoviePage, MovieSection, Section, StyledPosterWithGradient, Info, Title, Year } from "../movieDetails/styled";
+import { MoviePage, MovieSection, Section, BigPosterWithGradient, Info, Title, Year } from "../movieDetails/styled";
 // import { selectMovieDetails } from "../moviesSlice";
 
 // const securyBaseUrl = "https://image.tmdb.org/t/p/";
@@ -13,9 +13,9 @@ const MovieDetails = (backdrop_path) => {
   return (
     <>
       <MoviePage>
-        <StyledPosterWithGradient>
+        <BigPosterWithGradient>
           <img src="https://image.tmdb.org/t/p/w500//5mzr6JZbrqnqD8rCEvPhuCE5Fw2.jpg" alt="bigPoster" />
-        </StyledPosterWithGradient>
+        </BigPosterWithGradient>
 
         <MovieSection>
           
