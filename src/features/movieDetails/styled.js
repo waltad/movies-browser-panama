@@ -33,7 +33,7 @@ export const BigPosterWithGradient = styled.div`
       rgba(0, 0, 0, 0.740286) 85.86%, #000000 92.87%),
       linear-gradient(270deg, #000000 14.11%, rgba(0, 0, 0, 0.873268) 15.08%, rgba(0, 0, 0, 0.720529) 16.51%, rgba(0, 0, 0, 0.294577) 19.99%, rgba(0, 0, 0, 0.159921) 21.88%, rgba(0, 0, 0, 0) 25.68%),
       linear-gradient(90deg, #000000 13.6%, rgba(0, 0, 0, 0.984059) 14.58%, rgba(0, 0, 0, 0.967732) 15.44%, rgba(0, 0, 0, 0.865569) 16.3%, rgba(0, 0, 0, 0.230315) 22.87%, rgba(0, 0, 0, 0) 26.64%),
-    linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.689555) 4.66%, rgba(0, 0, 0, 0.439033) 9.34%, rgba(0, 0, 0, 0.20628) 15.16%, rgba(0, 0, 0, 0) 24.22%);
+      linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.689555) 4.66%, rgba(0, 0, 0, 0.439033) 9.34%, rgba(0, 0, 0, 0.20628) 15.16%, rgba(0, 0, 0, 0) 24.22%);
     background-clip: content-box;
   }
 `;
@@ -44,17 +44,24 @@ export const Section = styled.section`
 `;
 
 export const MovieSection = styled(Section)`
+  display: flex;
+  gap: 40px;
   padding: 40px;
   background-color: ${({theme}) => theme.colors.white};
+  box-shadow: 0px 4px 12px 0px #BAC7D580;
 `;
 
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
-
 `;
 
+export const Poster = styled.img`
+  width: 312px;
+  height: 464px;
+  border-radius: 5px;
+`;
 export const Title = styled.div`
   font-size: 36px;
   font-weight: 600;
@@ -69,7 +76,7 @@ export const Year = styled.div`
   text-align: left;
 `;
 
-export const ProductionAndRealese = styled.div`
+export const ProductionAndRelease = styled.div`
   font-size: 18px;
   font-weight: 400;
   line-height: 1.2;
@@ -80,4 +87,21 @@ export const StyledText = styled.span`
   color: ${({theme}) => theme.colors.stormGray};
 `;
 
+export const Rating = styled.div`
+  display: flex;
+  gap: 8px;
+  height: 29px;
+  text-align: left;
+`;
 
+export const Value = styled.div`
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.3;
+`;
+
+export const SmallerText = styled.div`
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+`;

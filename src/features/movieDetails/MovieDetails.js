@@ -6,18 +6,24 @@ import {
   MovieSection,
   Section,
   BigPosterWithGradient,
+  Poster,
   Info,
   Title,
   Year,
-  ProductionAndRealese,
+  ProductionAndRelease,
   StyledText,
+  Rating,
+  Value,
 } from "../movieDetails/styled";
+import noPoster from "../../images/Movie.png";
+import star from "../../images/Star.png";
+import StyledStar from "../../common/StyledStar";
 // import { selectMovieDetails } from "../moviesSlice";
 
 // const securyBaseUrl = "https://image.tmdb.org/t/p/";
 // const bigPosterSize = "w500";
 
-const MovieDetails = ({ backdrop_path, title, release_date }) => {
+const MovieDetails = ({ backdrop_path, poster_path, title, release_date, vote_average }) => {
   // const dispatch = useDispatch();
   // dispatch(selectMovieDetails);
   // src={backdrop_path ? `${securyBaseUrl}${bigPosterSize}${backdrop_path}` : null} alt="bigPoster"
@@ -32,6 +38,9 @@ const MovieDetails = ({ backdrop_path, title, release_date }) => {
         </BigPosterWithGradient>
 
         <MovieSection>
+          
+          <Poster src={poster_path ? poster_path : noPoster}/>
+
           <Info>
             <Title>
               Mulan
@@ -43,13 +52,22 @@ const MovieDetails = ({ backdrop_path, title, release_date }) => {
               {release_date ? release_date.slice(0, 4) : null}
             </Year>
 
-            <ProductionAndRealese>
+            <ProductionAndRelease>
               <StyledText>Production: </StyledText> <br />
               <StyledText>Release date: </StyledText>
-            </ProductionAndRealese>
+            </ProductionAndRelease>
+
             <Genres>
               <Genre>Horror</Genre><Genre>Adventure</Genre><Genre>Science fiction</Genre>
             </Genres>
+
+            <Rating>
+              <StyledStar src={star}/>
+              <Value>
+                7,8
+                {vote_average ? vote_average.toFixed(1) : null}
+              </Value>
+            </Rating>
           </Info>
         </MovieSection>
 
