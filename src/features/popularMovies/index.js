@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 import {
   selectStatus,
   selectData,
-  selectGenres
 } from "../moviesSlice";
 import { MovieTile } from "../../common/MovieTile";
 import { ErrorMessage } from "../../common/States/Error";
@@ -18,10 +17,9 @@ const PopularMovies = () => {
   const location = useLocation().pathname;
   const status = useSelector(selectStatus);
   const popularMovies = useSelector(selectData);
-  const genres = useSelector(selectGenres);
 
   useEffect(() => {
-    if (location.includes("movie")) dispatch(fetchPopularMovies());
+    if (location.includes("movies")) dispatch(fetchPopularMovies());
   }, []);
 
   if (status === "error") {
