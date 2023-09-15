@@ -90,8 +90,8 @@ export const StyledText = styled.span`
 export const Rating = styled.div`
   display: flex;
   gap: 8px;
-  height: 29px;
   text-align: left;
+  align-items: baseline;
 `;
 
 export const Value = styled.div`
@@ -100,8 +100,14 @@ export const Value = styled.div`
   line-height: 1.3;
 `;
 
-export const SmallerText = styled.div`
+export const SmallerText = styled.span`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.2;
+`;
+
+export const Description = styled.div`
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
 `;

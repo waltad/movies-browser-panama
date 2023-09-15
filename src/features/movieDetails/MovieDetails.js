@@ -14,6 +14,8 @@ import {
   StyledText,
   Rating,
   Value,
+  SmallerText,
+  Description,
 } from "../movieDetails/styled";
 import noPoster from "../../images/Movie.png";
 import star from "../../images/Star.png";
@@ -23,7 +25,7 @@ import StyledStar from "../../common/StyledStar";
 // const securyBaseUrl = "https://image.tmdb.org/t/p/";
 // const bigPosterSize = "w500";
 
-const MovieDetails = ({ backdrop_path, poster_path, title, release_date, vote_average }) => {
+const MovieDetails = ({ backdrop_path, poster_path, title, release_date, vote_average, vote_count }) => {
   // const dispatch = useDispatch();
   // dispatch(selectMovieDetails);
   // src={backdrop_path ? `${securyBaseUrl}${bigPosterSize}${backdrop_path}` : null} alt="bigPoster"
@@ -67,7 +69,16 @@ const MovieDetails = ({ backdrop_path, poster_path, title, release_date, vote_av
                 7,8
                 {vote_average ? vote_average.toFixed(1) : null}
               </Value>
+              <SmallerText>
+                / 10
+              </SmallerText>
+              <SmallerText>
+                {vote_count} votes
+              </SmallerText>
             </Rating>
+            <Description>
+
+            </Description>
           </Info>
         </MovieSection>
 
