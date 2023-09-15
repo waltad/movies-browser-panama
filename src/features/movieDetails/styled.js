@@ -50,7 +50,6 @@ export const MovieSection = styled(Section)`
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 8px, 0px, 8px, 0px;
   gap: 24px;
 
 `;
@@ -69,10 +68,15 @@ export const Year = styled.div`
   text-align: left;
 `;
 
-/* Content */
+export const ProductionAndRealese = styled.div`
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: left;
+`;
 
-// position: absolute;
-// width: 1368px;
-// height: 1863px;
-// left: 276px;
-// top: 927px;
+export const StyledText = styled.span`
+  color: ${({theme}) => theme.colors.stormGray};
+`;
+
+
