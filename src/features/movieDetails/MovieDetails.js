@@ -1,4 +1,6 @@
 // import { useDispatch } from "react-redux";
+import Genres from "../../common/Genres";
+import Genre from "../../common/Genre";
 import {
   MoviePage,
   MovieSection,
@@ -15,7 +17,7 @@ import {
 // const securyBaseUrl = "https://image.tmdb.org/t/p/";
 // const bigPosterSize = "w500";
 
-const MovieDetails = (backdrop_path, title, release_date) => {
+const MovieDetails = ({ backdrop_path, title, release_date }) => {
   // const dispatch = useDispatch();
   // dispatch(selectMovieDetails);
   // src={backdrop_path ? `${securyBaseUrl}${bigPosterSize}${backdrop_path}` : null} alt="bigPoster"
@@ -33,18 +35,21 @@ const MovieDetails = (backdrop_path, title, release_date) => {
           <Info>
             <Title>
               Mulan
-              {/* {title ? title : null} */}
+              {title ? title : null}
             </Title>
 
             <Year>
               2020
-              {/* {release_date ? release_date.slice(0, 4) : null} */}
+              {release_date ? release_date.slice(0, 4) : null}
             </Year>
 
             <ProductionAndRealese>
               <StyledText>Production: </StyledText> <br />
               <StyledText>Release date: </StyledText>
             </ProductionAndRealese>
+            <Genres>
+              <Genre>Horror</Genre><Genre>Adventure</Genre><Genre>Science fiction</Genre>
+            </Genres>
           </Info>
         </MovieSection>
 
