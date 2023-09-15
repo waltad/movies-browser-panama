@@ -3,7 +3,6 @@ import {
   NoImage,
   Content,
   Title,
-  Details,
   Label,
   Info,
   Description,
