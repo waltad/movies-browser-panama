@@ -1,11 +1,11 @@
+import Genre from "../Genre";
+import Genres from "../Genres";
 import {
   Poster,
   MainInfo,
   Wrapper,
   Title,
   Year,
-  Genres,
-  Genre,
   Rating,
   Star,
   Value,
