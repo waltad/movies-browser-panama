@@ -7,12 +7,12 @@ import {
   Title,
   Year,
   Rating,
-  Star,
   Value,
   Votes,
 } from "./styled";
 import noPoster from "../../images/Movie.png";
 import star from "../../images/Star.png";
+import StyledStar from "../StyledStar";
 import { useSelector } from "react-redux";
 import { selectGenres } from "../../features/moviesSlice";
 
@@ -46,7 +46,7 @@ export const MovieTile = ({ genre_ids, poster_path, title, release_date, vote_av
       </MainInfo>
 
       <Rating>
-        <Star src={star} alt="star" />
+        <StyledStar src={star} alt="star" />
         <Value>
           {vote_average ? vote_average : null}
         </Value>
