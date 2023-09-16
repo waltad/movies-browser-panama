@@ -28,11 +28,14 @@ const moviesSlice = createSlice({
             state.moviesData = data;
             state.status = "success";
         },
-        fetchPopularMoviesError: state => {
+        fetchError: state => {
             state.status = "error";
         },
         setGenres: (state, { payload: genres }) => {
             state.genres = genres;
+        },
+        fetchSearchMovies: state => {
+            state.status = "loading";
         },
     },
 });
@@ -44,8 +47,9 @@ export const {
     setLastPage,
     fetchPopularMovies,
     setMoviesData,
-    fetchPopularMoviesError,
-    setGenres
+    fetchError,
+    setGenres,
+    fetchSearchMovies
 } = moviesSlice.actions;
 
 export const selectMoviesState = state => state.movies;
