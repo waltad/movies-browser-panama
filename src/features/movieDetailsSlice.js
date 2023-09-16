@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const moviesSlice = createSlice({
+const movieDetailsSlice = createSlice({
     name: 'movieDetails',
     initialState: {
         status: undefined,
@@ -30,4 +30,4 @@ export const selectMovieDetailsState = state => state.movieDetails;
 export const selectMovieDetailsStatus = state => selectMovieDetailsState(state).status;
 export const selectMovieDetailsData = state => selectMovieDetailsState(state).movieDetailsData;
 
-export default moviesSlice.reducer;
+export default movieDetailsSlice.reducer;
