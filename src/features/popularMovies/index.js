@@ -5,6 +5,7 @@ import {
   selectStatus,
   selectData,
 } from "../moviesSlice";
+import { setMovieId } from "../moviesSlice";
 import { MovieTile } from "../../common/MovieTile";
 import { ErrorMessage } from "../../common/States/Error";
 import { LoadingIcon } from "../../common/States/Loading";
@@ -37,7 +38,7 @@ const PopularMovies = () => {
           <Title>Popular Movies</Title>
           <MovieList>
             {popularMovies.map((movie) => (
-              <StyledNavLink key={`${movie.id}`} to="/movieDetails">
+              <StyledNavLink key={`${movie.id}`} onClick={() => dispatch(setMovieId(movie.id))} to="/movieDetails">
                 <MovieTile
                   poster_path={movie.poster_path}
                   title={movie.title}

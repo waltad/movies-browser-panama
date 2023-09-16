@@ -1,4 +1,4 @@
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import Genres from "../../common/Genres";
 import Genre from "../../common/Genre";
 import {
@@ -20,10 +20,11 @@ import {
 import noPoster from "../../images/Movie.png";
 import star from "../../images/Star.png";
 import StyledStar from "../../common/StyledStar";
-// import { selectMovieDetails } from "../moviesSlice";
+import { selectMovieId } from "../moviesSlice";
+import { selectMovieDetailsData } from "../movieDetailsSlice";
 
-// const securyBaseUrl = "https://image.tmdb.org/t/p/";
-// const bigPosterSize = "w500";
+const securyBaseUrl = "https://image.tmdb.org/t/p/";
+const bigPosterSize = "w500";
 
 const MovieDetails = ({ backdrop_path, poster_path, title, release_date, vote_average, vote_count }) => {
   // const dispatch = useDispatch();
@@ -34,7 +35,7 @@ const MovieDetails = ({ backdrop_path, poster_path, title, release_date, vote_av
       <MoviePage>
         <BigPosterWithGradient>
           <img
-            src="https://image.tmdb.org/t/p/w500//5mzr6JZbrqnqD8rCEvPhuCE5Fw2.jpg"
+            src={backdrop_path ? `${securyBaseUrl}${bigPosterSize}${backdrop_path}` : null}
             alt="bigPoster"
           />
         </BigPosterWithGradient>
@@ -77,7 +78,8 @@ const MovieDetails = ({ backdrop_path, poster_path, title, release_date, vote_av
               </SmallerText>
             </Rating>
             <Description>
-
+              A young Chinese maiden disguises herself as a male warrior in order to save her father. 
+              Disguises herself as a male warrior in order to save her father.  A young Chinese maiden disguises herself as a male warrior in order to save her father.
             </Description>
           </Info>
         </MovieSection>
