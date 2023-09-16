@@ -72,7 +72,7 @@ export const DetailsLine = styled.div`
   flex-direction: row;
 `;
 
-export const Datails = styled.div`
+export const Details = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
