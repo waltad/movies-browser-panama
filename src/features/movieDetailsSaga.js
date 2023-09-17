@@ -3,11 +3,11 @@ import { fetchMovieDetails, fetchMovieDetailsError, setMovieDetails } from "./mo
 import { getMovieDetails } from "./getMovieDetails";
 // import { getGenresList } from "./getGenresList";
 
-function* fetchMovieDetailsHandler() {
+function* fetchMovieDetailsHandler(movieId) {
   try {
     yield delay(1000);
     const [movieDetails] = yield all([
-      call(getMovieDetails),
+      call(getMovieDetails, movieId),
       // call(getGenresList),
     ]);
     yield put(setMovieDetails(movieDetails));
