@@ -4,11 +4,6 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   margin: 40px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    margin: 16px;
-    width: 290px;
-  }
 `;
 
 export const DetailsTile = styled.article`
@@ -36,7 +31,7 @@ export const DetailsTile = styled.article`
     padding: 16px;
     margin-top: 10px;
     grid-gap: 0px 16px;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr auto;
   }
 `;
