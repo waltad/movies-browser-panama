@@ -17,7 +17,7 @@ const PersonDetailTile = () => {
       <DetailsTile>
         <NoImage src={anonymous} alt="name" />
         <Content>
-          <Title>Alicja Roza</Title>
+          <Title>Liu Yifei</Title>
           <DetailsLine>
             <Label>Date of birth:</Label>
             <Info>info</Info>

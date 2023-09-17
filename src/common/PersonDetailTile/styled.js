@@ -26,6 +26,7 @@ export const DetailsTile = styled.article`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding: 24px;
+    margin-top: 24px;
     grid-gap: 0px 24px;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr 60%;
@@ -33,6 +34,7 @@ export const DetailsTile = styled.article`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: 16px;
+    margin-top: 10px;
     grid-gap: 0px 16px;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr auto;
@@ -40,7 +42,10 @@ export const DetailsTile = styled.article`
 `;
 
 export const NoImage = styled.img`
-  grid-area: 1 / 1 / 3 / 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: span 2;
   align-self: start;
   justify-self: end;
   width: 399px;
@@ -56,7 +61,10 @@ export const NoImage = styled.img`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 116px;
     height: auto;
-    grid-area: 1 / 1 / 2 / 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
     justify-self: start;
   }
 `;
@@ -141,6 +149,7 @@ export const Description = styled.p`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-top: 16px;
     font-size: 12px;
     grid-area: 2 / 1 / 3 / 3;
   }
