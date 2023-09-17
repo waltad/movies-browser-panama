@@ -41,6 +41,11 @@ export const Name = styled.header`
     font-size: 22px;
     font-weight: 500;
     line-height: 1.3;
+    overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         font-size: 14px;
