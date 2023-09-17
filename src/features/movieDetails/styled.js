@@ -19,7 +19,7 @@ export const BigPosterWithGradient = styled.div`
   img {
     width: 71%;
     height: auto;
-    object-fit: cover;
+    /* object-fit: cover; */
   }
 
   &::before {
@@ -47,7 +47,7 @@ export const MovieSection = styled(Section)`
   display: flex;
   gap: 40px;
   padding: 40px;
-  background-color: ${({theme}) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 4px 12px 0px #BAC7D580;
 `;
 
@@ -84,7 +84,7 @@ export const ProductionAndRelease = styled.div`
 `;
 
 export const StyledText = styled.span`
-  color: ${({theme}) => theme.colors.stormGray};
+  color: ${({ theme }) => theme.colors.stormGray};
 `;
 
 export const Rating = styled.div`
@@ -110,4 +110,30 @@ export const Description = styled.div`
   font-size: 20px;
   font-weight: 400;
   line-height: 1.6;
+`;
+
+export const MainInfo = styled.div`
+  position: absolute;
+  bottom: 7%;
+  left: 14%;
+`;
+
+export const BigTitle = styled.div`
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+  color: ${({ theme }) => theme.colors.white};
+`;
+
+export const TopRating = styled.div`
+  display: flex;
+  gap: 8px;
+  height: 40px;
+  
+`;
+
+export const TopStar = styled.img`
+  width: 40px;
+  height: 40px;
 `;

@@ -18,6 +18,10 @@ import {
   Value,
   SmallerText,
   Description,
+  MainInfo,
+  BigTitle,
+  TopRating,
+  TopStar,
 } from "../movieDetails/styled";
 import noPoster from "../../images/Movie.png";
 import star from "../../images/Star.png";
@@ -59,6 +63,14 @@ const MovieDetails = () => {
               src={movieDetails.backdrop_path ? `${securyBaseUrl}${bigPosterSize}${movieDetails.backdrop_path}` : null}
               alt="bigPoster"
             />
+            <MainInfo>
+              <BigTitle>
+                {movieDetails.title ? movieDetails.title : null}
+              </BigTitle>
+              <TopRating>
+                {/* <TopStar src={star} /> */}
+              </TopRating>
+            </MainInfo>
           </BigPosterWithGradient>
 
           <MovieSection>
