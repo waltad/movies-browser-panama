@@ -1,6 +1,4 @@
-// import { useSelector } from "react-redux";
 import { authorizationKey } from "./authorizationKey";
-// import { selectMovieId } from "./moviesSlice";
 
 const options = {
   method: 'GET',
@@ -10,12 +8,10 @@ const options = {
   }
 };
 
-
-
 export const getMovieDetails = async (movieId) => {
   
-  // const movieId = useSelector(selectMovieId);
-  const urlMovieDetails = `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`;
+  const id = movieId.payload;
+  const urlMovieDetails = `https://api.themoviedb.org/3/movie/${id}?language=en-US`;
   
   const response = await fetch(urlMovieDetails, options);
 
