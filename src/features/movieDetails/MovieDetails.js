@@ -28,9 +28,8 @@ import { ErrorMessage } from "../../common/States/Error";
 import { LoadingIcon } from "../../common/States/Loading";
 
 const securyBaseUrl = "https://image.tmdb.org/t/p/";
-const bigPosterSize = "w500";
-const posterSize = "w300";
-// { backdrop_path, poster_path, title, release_date, vote_average, vote_count }
+const bigPosterSize = "original";
+const posterSize = "w500";
 
 const MovieDetails = () => {
   const dispatch = useDispatch();
@@ -57,14 +56,14 @@ const MovieDetails = () => {
         <MoviePage>
           <BigPosterWithGradient>
             <img
-              src={movieDetails.backdrop_path ? `${securyBaseUrl}${posterSize}${movieDetails.backdrop_path}` : null}
+              src={movieDetails.backdrop_path ? `${securyBaseUrl}${bigPosterSize}${movieDetails.backdrop_path}` : null}
               alt="bigPoster"
             />
           </BigPosterWithGradient>
 
           <MovieSection>
 
-            <Poster src={movieDetails.poster_path ? `${securyBaseUrl}${bigPosterSize}${movieDetails.poster_path}` : noPoster} />
+            <Poster src={movieDetails.poster_path ? `${securyBaseUrl}${posterSize}${movieDetails.poster_path}` : noPoster} />
 
             <Info>
               <Title>
@@ -76,12 +75,14 @@ const MovieDetails = () => {
               </Year>
 
               <ProductionAndRelease>
-                <StyledText>Production: </StyledText> <br />
+                <StyledText>Production: </StyledText>
+                {(movieDetails.production_countries).map((country) => (<span>{country.name}, </span>))}<br />
                 <StyledText>Release date: </StyledText>
+                {`${(movieDetails.release_date).slice(8, 10)}.${(movieDetails.release_date).slice(5, 7)}.${(movieDetails.release_date).slice(0, 4)}`}
               </ProductionAndRelease>
 
               <Genres>
-                <Genre>Horror</Genre><Genre>Adventure</Genre><Genre>Science fiction</Genre>
+                {(movieDetails.genres).map((genre) => (<Genre>{genre.name}</Genre>))}
               </Genres>
 
               <Rating>
@@ -104,7 +105,6 @@ const MovieDetails = () => {
 
           <Section></Section>
         </MoviePage>
-        <p>Movie Details</p>
       </>
     );
   }
