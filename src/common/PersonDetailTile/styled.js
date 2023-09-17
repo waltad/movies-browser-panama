@@ -7,25 +7,44 @@ export const Wrapper = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin: 16px;
+    width: 290px;
   }
 `;
 
 export const DetailsTile = styled.article`
-  display: flex;
-  padding: 40px;
-  align-items: flex-start;
   background-color: ${({ theme }) => theme.colors.white};
   padding: 40px;
   box-shadow: ${({ theme }) => theme.tileShadow};
   max-width: 1288px;
   margin-top: 56px;
-  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 3fr;
+  grid-gap: 0px 40px;
+  align-content: start;
+  justify-content: start;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    padding: 24px;
+    grid-gap: 0px 24px;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 60%;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 16px;
+    grid-gap: 0px 16px;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr auto;
+  }
 `;
 
 export const NoImage = styled.img`
+  grid-area: 1 / 1 / 3 / 2;
+  align-self: start;
+  justify-self: end;
   width: 399px;
   height: 564px;
-  margin-right: 40px;
   background-color: ${({ theme }) => theme.colors.silver};
   border-radius: 5px;
 
@@ -37,14 +56,13 @@ export const NoImage = styled.img`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 116px;
     height: auto;
+    grid-area: 1 / 1 / 2 / 2;
+    justify-self: start;
   }
 `;
 
 export const Content = styled.div`
-  display: flex;
-  padding: 8px 0px;
-  flex-direction: column;
-  align-items: flex-start;
+  padding: 8px 0px 24px 0px;
 `;
 
 export const Title = styled.h1`
@@ -57,12 +75,14 @@ export const Title = styled.h1`
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 24px;
     font-weight: bold;
+    margin-bottom: 16px;
     line-height: 130%;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 14px;
     font-weight: bold;
+    margin-bottom: 12px;
     line-height: 130%;
   }
 `;
@@ -114,6 +134,7 @@ export const Info = styled.p`
 export const Description = styled.p`
   font-size: 20px;
   line-height: 1.6;
+  margin: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 16px;
@@ -121,5 +142,6 @@ export const Description = styled.p`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 12px;
+    grid-area: 2 / 1 / 3 / 3;
   }
 `;
