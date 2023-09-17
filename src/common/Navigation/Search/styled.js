@@ -9,6 +9,7 @@ export const SearchBox = styled.div`
     background-color: ${({ theme }) => theme.colors.white};
     display: flex;
     align-items: center;
+    cursor: text;
 
     &::placeholder && {
         color: ${({ theme }) => theme.colors.waterloo};
