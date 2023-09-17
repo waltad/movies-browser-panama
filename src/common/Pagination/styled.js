@@ -19,6 +19,13 @@ export const Button = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  color: ${({ theme }) => theme.colors.mineShaft};
+
+  &:disabled {
+    background-color: ${({ theme }) => theme.colors.mystic};
+    color: ${({ theme }) => theme.colors.woodSmoke};
+    cursor: auto;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin-right: 8px;
@@ -32,7 +39,13 @@ export const PrevArrowIcon = styled(prevArrow)`
     ismobile &&
     css`
       display: none;
-    `};
+  `};
+  
+  ${({ isDisabled }) =>
+    isDisabled &&
+    css`
+      color: ${({ theme }) => theme.colors.waterloo};
+  `};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     display: block;
@@ -47,6 +60,12 @@ export const NextArrowIcon = styled(nextArrow)`
     css`
       display: none;
     `};
+
+    ${({ isDisabled }) =>
+    isDisabled &&
+    css`
+      color: ${({ theme }) => theme.colors.waterloo};
+  `};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     display: block;
