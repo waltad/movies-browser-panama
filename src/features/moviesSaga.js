@@ -4,11 +4,11 @@ import { getPopularMovies } from "./getPopularMovies";
 import { getGenresList } from "./getGenresList";
 import { getSearchResults } from "../common/Navigation/Search/getSearchResults";
 
-function* fetchPopularMoviesHandler() {
+function* fetchPopularMoviesHandler({ payload: page }) {
     try {
         yield delay(1000);
         const [popularMovies, genres] = yield all([
-            call(getPopularMovies),
+            call(getPopularMovies, page),
             call(getGenresList),
         ]);
         yield put(setMoviesData(popularMovies));
