@@ -14,7 +14,7 @@ import { ErrorMessage } from "../../../common/States/Error";
 import { NoResults } from "../../../common/States/NoResults";
 import { useQueryParameter } from "../../../common/Navigation/queryParameters";
 import searchQueryParamName from "../../../common/Navigation/searchQueryParamName";
-import { selectPage } from "../../moviesSlice";
+import paginationParamName from "../../../common/Pagination/paginationParamName";
 
 const PopularPeople = () => {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const PopularPeople = () => {
   const peopleList = data.results || [];
   const query = useQueryParameter(searchQueryParamName);
   const total_results = data.total_results;
-  const page = useSelector(selectPage);
+  const page = useQueryParameter(paginationParamName);
 
   useEffect(() => {
     const options = {
@@ -35,7 +35,7 @@ const PopularPeople = () => {
     if (query) {
       dispatch(fetchSearchPeople(options));
     } else {
-      dispatch(fetchPeople());
+      dispatch(fetchPeople(page));
     }
   }, [query, page, dispatch]);
 
@@ -56,10 +56,10 @@ const PopularPeople = () => {
     case "success":
       if (!peopleList.length && query) {
         return (
-          <>
+          <Wrapper>
             <Header>Sorry, there are no results for "{query}"</Header>
             <NoResults />
-          </>
+          </Wrapper>
         )
       } else if (query) {
         return (
