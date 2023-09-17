@@ -4,7 +4,6 @@ import {
   selectStatus,
   selectData,
   fetchSearchMovies,
-  selectPage
 } from "../moviesSlice";
 import { MovieTile } from "../../common/MovieTile";
 import { ErrorMessage } from "../../common/States/Error";
@@ -15,6 +14,7 @@ import { Pagination } from "../../common/Pagination";
 import { useQueryParameter } from "../../common/Navigation/queryParameters";
 import searchQueryParamName from "../../common/Navigation/searchQueryParamName";
 import { NoResults } from "../../common/States/NoResults";
+import paginationParamName from "../../common/Pagination/paginationParamName";
 
 const PopularMovies = () => {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const PopularMovies = () => {
   const popularMovies = data.results || [];
   const query = useQueryParameter(searchQueryParamName);
   const totalResults = data.total_results;
-  const page = useSelector(selectPage);
+  const page = useQueryParameter(paginationParamName);
 
   useEffect(() => {
     const options = {
@@ -35,9 +35,9 @@ const PopularMovies = () => {
     if (query) {
       dispatch(fetchSearchMovies(options));
     } else {
-      dispatch(fetchPopularMovies());
+      dispatch(fetchPopularMovies(page));
     }
-  }, [query, page, dispatch]);
+  }, [page, dispatch, query]);
 
   switch (status) {
     case "error":
@@ -56,10 +56,10 @@ const PopularMovies = () => {
     case "success":
       if (!popularMovies.length && query) {
         return (
-          <>
+          <Wrapped>
             <Title>Sorry, there are no results for "{query}"</Title>
             <NoResults />
-          </>
+          </Wrapped>
         )
       } else if (query) {
         return (
@@ -110,10 +110,10 @@ const PopularMovies = () => {
           </>
         )
       }
-      default:
-        return (
-          <ErrorMessage />
-        );
+    default:
+      return (
+        <ErrorMessage />
+      );
   }
 };
 
