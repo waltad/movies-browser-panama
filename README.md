@@ -1,6 +1,6 @@
 # Movies-Browser
 This is a group project made by our group called "Panama". We are assigned to replicate a figma project and implement all of the website's functions ourselves. This will be a web application that allows you to see and search different movies and also people related to them (cast, crew) and see some details about them.
-*Disclaimer: For now app displays only first page of both movies and people, also now you can search for certain movies or people typing in the Search input box. As soon as we add new functions to our app, we will deploy them. Project is still under development.*
+*Disclaimer: For now app displays only first page of both movies and people, also now you can search for certain movies or people typing in the Search input box. In recent update, you can now use pagination on the bottom of the page, to see results for different pages. As soon as we add new functions to our app, we will deploy them. Project is still under development.*
 
 ## Usage:
 Project is still under development.
@@ -17,6 +17,7 @@ https://waltad.github.io/movies-browser-panama/
 - react-router-dom
 - Redux (@reduxjs/toolkit, react-redux, redux-saga)
 - axios
+- custom hooks
 
 # Getting Started with Create React App
 
