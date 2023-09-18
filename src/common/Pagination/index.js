@@ -7,30 +7,35 @@ import {
   Button,
   NextArrowIcon,
 } from "./styled";
+import { usePagination } from "./usePagination";
 
 export const Pagination = () => {
+  const { page, totalPages, setNextPage, setPreviousPage, setFirstPage, setLastPage } = usePagination();
+  const isFirstPage = page === 1;
+  const isLastPage = page === totalPages;
+
   return (
     <Wrapper>
-      <Button>
-        <PrevArrowIcon />
-        <PrevArrowIcon ismobile="true" />
+      <Button onClick={setFirstPage} disabled={isFirstPage}>
+        <PrevArrowIcon isdisabled={isFirstPage} />
+        <PrevArrowIcon ismobile="true" isdisabled={isFirstPage} />
         <ButtonText>First</ButtonText>
       </Button>
-      <Button>
-        <PrevArrowIcon />
+      <Button onClick={setPreviousPage} disabled={isFirstPage}>
+        <PrevArrowIcon isdisabled={isFirstPage} />
         <ButtonText>Previous</ButtonText>
       </Button>
       <PageCounter>
-        Page <PageNumbers>1</PageNumbers> of <PageNumbers>500</PageNumbers>
+        Page <PageNumbers>{page}</PageNumbers> of <PageNumbers>{totalPages}</PageNumbers>
       </PageCounter>
-      <Button>
+      <Button onClick={setNextPage} disabled={isLastPage}>
         <ButtonText>Next</ButtonText>
-        <NextArrowIcon />
+        <NextArrowIcon isdisabled={isLastPage} />
       </Button>
-      <Button>
+      <Button onClick={setLastPage} disabled={isLastPage}>
         <ButtonText>Last</ButtonText>
-        <NextArrowIcon />
-        <NextArrowIcon ismobile="true" />
+        <NextArrowIcon isdisabled={isLastPage} />
+        <NextArrowIcon ismobile="true" isdisabled={isLastPage} />
       </Button>
     </Wrapper>
   );
