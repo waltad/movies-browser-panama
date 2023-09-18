@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/movies-browser-panama/static/js/main.b6d692ad.js",
+    "main.js": "/movies-browser-panama/static/js/main.1d5d5c0f.js",
     "static/js/787.515bd589.chunk.js": "/movies-browser-panama/static/js/787.515bd589.chunk.js",
     "static/media/Error.svg": "/movies-browser-panama/static/media/Error.a514e9c64a76d5cf149bdd7443857605.svg",
     "index.html": "/movies-browser-panama/index.html",
@@ -9,10 +9,10 @@
     "static/media/prevArrow.svg": "/movies-browser-panama/static/media/prevArrow.213447d6519e0a69870a45f7e61c9e7b.svg",
     "static/media/spinner.svg": "/movies-browser-panama/static/media/spinner.c5f29646f52eed97faa98a9f6f43ce08.svg",
     "static/media/Search.svg": "/movies-browser-panama/static/media/Search.6c9b7fea663747479f165be2c181742b.svg",
-    "main.b6d692ad.js.map": "/movies-browser-panama/static/js/main.b6d692ad.js.map",
+    "main.1d5d5c0f.js.map": "/movies-browser-panama/static/js/main.1d5d5c0f.js.map",
     "787.515bd589.chunk.js.map": "/movies-browser-panama/static/js/787.515bd589.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.b6d692ad.js"
+    "static/js/main.1d5d5c0f.js"
   ]
 }
