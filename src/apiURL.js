@@ -7,6 +7,8 @@ export const APIkey = "ee4ad061bf5d1e6df73bdeb8e9166756";
 
 // export const detailsUrl = "https://api.themoviedb.org/3/movie/{movie_id}";
 
+export const personAPI = "https://api.themoviedb.org/3/person/";
+
 // export const creditsUrl =
 //   "https://api.themoviedb.org/3/movie/{movie_id}/credits";
 
