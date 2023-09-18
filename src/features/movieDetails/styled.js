@@ -19,7 +19,7 @@ export const BigPosterWithGradient = styled.div`
   img {
     width: 71%;
     height: auto;
-    /* object-fit: cover; */
+    object-fit: cover;
   }
 
   &::before {
@@ -124,16 +124,46 @@ export const BigTitle = styled.div`
   line-height: 1.2;
   text-align: left;
   color: ${({ theme }) => theme.colors.white};
+  /* display: grid;
+  grid-template-columns: auto;
+  gap: 16px; */
 `;
 
 export const TopRating = styled.div`
   display: flex;
   gap: 8px;
   height: 40px;
-  
 `;
 
-export const TopStar = styled.img`
+export const TopStar = styled.div`
   width: 40px;
-  height: 40px;
+  height: 38px;
+  img {
+    width: 100%;
+  }
+`;
+
+export const TopValue = styled.div`
+  align-items: baseline;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: left;
+  color: ${({ theme }) => theme.colors.white};
+`;
+
+export const TopSmallerText = styled.span`
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: left;
+`;
+
+export const TopVotes = styled.div`
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: left;
+  color: ${({ theme }) => theme.colors.white};
+  margin-top: 16px;
 `;

@@ -22,6 +22,9 @@ import {
   BigTitle,
   TopRating,
   TopStar,
+  TopValue,
+  TopSmallerText,
+  TopVotes,
 } from "../movieDetails/styled";
 import noPoster from "../../images/Movie.png";
 import star from "../../images/Star.png";
@@ -68,8 +71,17 @@ const MovieDetails = () => {
                 {movieDetails.title ? movieDetails.title : null}
               </BigTitle>
               <TopRating>
-                {/* <TopStar src={star} /> */}
+                <TopStar>
+                  <img src={star} alt="star"/>
+                </TopStar>
+                <TopValue>
+                  {movieDetails.vote_average ? (movieDetails.vote_average).toFixed(1) : null}
+                  <TopSmallerText> /10</TopSmallerText>
+                </TopValue>
               </TopRating>
+              <TopVotes>
+               {movieDetails.vote_count ? movieDetails.vote_count : null} votes
+              </TopVotes>
             </MainInfo>
           </BigPosterWithGradient>
 
@@ -88,13 +100,13 @@ const MovieDetails = () => {
 
               <ProductionAndRelease>
                 <StyledText>Production: </StyledText>
-                {(movieDetails.production_countries).map((country) => (<span>{country.name}, </span>))}<br />
+                {movieDetails.production_countries ? (movieDetails.production_countries).map((country) => (<span>{country.name}, </span>)) : null}<br />
                 <StyledText>Release date: </StyledText>
-                {`${(movieDetails.release_date).slice(8, 10)}.${(movieDetails.release_date).slice(5, 7)}.${(movieDetails.release_date).slice(0, 4)}`}
+                {movieDetails.release_date ? `${(movieDetails.release_date).slice(8, 10)}.${(movieDetails.release_date).slice(5, 7)}.${(movieDetails.release_date).slice(0, 4)}` : null}
               </ProductionAndRelease>
 
               <Genres>
-                {(movieDetails.genres).map((genre) => (<Genre>{genre.name}</Genre>))}
+                {movieDetails.genres ? ( movieDetails.genres).map((genre) => (<Genre>{genre.name}</Genre>)) : null}
               </Genres>
 
               <Rating>
@@ -106,11 +118,11 @@ const MovieDetails = () => {
                   / 10
                 </SmallerText>
                 <SmallerText>
-                  {movieDetails.vote_count} votes
+                  {movieDetails.vote_count ? movieDetails.vote_count : null} votes
                 </SmallerText>
               </Rating>
               <Description>
-                {movieDetails.overview}
+                {movieDetails.overview ? movieDetails.overview : null}
               </Description>
             </Info>
           </MovieSection>
