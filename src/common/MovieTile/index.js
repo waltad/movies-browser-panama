@@ -46,7 +46,9 @@ export const MovieTile = ({ genre_ids, poster_path, title, release_date, vote_av
       </MainInfo>
 
       <Rating>
-        <StyledStar src={star} alt="star" />
+        <StyledStar>
+          <img src={star} alt="star" />
+        </StyledStar>
         <Value>
           {vote_average ? vote_average : null}
         </Value>
