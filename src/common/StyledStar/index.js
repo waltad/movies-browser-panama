@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import star from "../../images/Star.png";
 
 export default styled.img`
   width: 24px;
