@@ -21,7 +21,7 @@ export const usePagination = () => {
             key: paginationParamName,
             value: page,
         });
-    }, [page, replaceQueryParameter])
+    }, [page])
 
     const setNextPage = () => {
         setPage((page) => page += 1);
