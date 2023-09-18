@@ -3,10 +3,14 @@ import styled from "styled-components";
 export const MoviePage = styled.div`
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   row-gap: 40px;
   width: 100%;
   background: ${({ theme }) => theme.colors.whisper};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    row-gap: 16px;
+  }
 `;
 
 export const BigPosterWithGradient = styled.div`
@@ -41,32 +45,67 @@ export const BigPosterWithGradient = styled.div`
 export const Section = styled.section`
   display:grid;
   width: 71%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    width: 85%;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 95%;
+  }
 `;
 
 export const MovieSection = styled(Section)`
-  display: flex;
+  grid-template-columns: 312px auto;
+  grid-template-rows: auto auto;
   gap: 40px;
   padding: 40px;
   background-color: ${({ theme }) => theme.colors.white};
-  box-shadow: 0px 4px 12px 0px #BAC7D580;
+  box-shadow: ${({ theme }) => theme.tileShadow};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-template-columns: 114px auto;
+    gap: 16px;
+    padding: 16px;
+  }
 `;
 
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-row: 1;
+    grid-column: 2;
+    gap: 8px;
+  }
 `;
 
 export const Poster = styled.img`
+  grid-row: 1 /3;
   width: 312px;
   height: 464px;
   border-radius: 5px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-row: 1;
+    width: 114px;
+    height: 169px;
+  }
 `;
+
 export const Title = styled.div`
   font-size: 36px;
   font-weight: 600;
   line-height: 1.2;
   text-align: left;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
 `;
 
 export const Year = styled.div`
@@ -74,6 +113,11 @@ export const Year = styled.div`
   font-weight: 400;
   line-height: 1.2;
   text-align: left;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 13px;
+    color: ${({theme}) => theme.colors.waterloo};
+  }
 `;
 
 export const ProductionAndRelease = styled.div`
@@ -81,10 +125,19 @@ export const ProductionAndRelease = styled.div`
   font-weight: 400;
   line-height: 1.2;
   text-align: left;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 12px;
+    line-height: 2;
+  }
 `;
 
 export const StyledText = styled.span`
   color: ${({ theme }) => theme.colors.stormGray};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
 `;
 
 export const Rating = styled.div`
@@ -98,18 +151,40 @@ export const Value = styled.div`
   font-size: 22px;
   font-weight: 500;
   line-height: 1.3;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 13px;
+  }
 `;
 
-export const SmallerText = styled.span`
+export const Votes = styled.span`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.2;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 13px;
+    color: ${({theme}) => theme.colors.waterloo};
+  }
+`;
+
+export const SmallerText = styled(Votes)`
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
 `;
 
 export const Description = styled.div`
+  grid-column: 2;
+  grid-row: 2;
   font-size: 20px;
   font-weight: 400;
   line-height: 1.6;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-column: 1 / 3;
+    font-size: 14px;
+  } 
 `;
 
 export const MainInfo = styled.div`
@@ -119,14 +194,20 @@ export const MainInfo = styled.div`
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto auto auto;
-  gap: 8px;
+  row-gap: 8px;
+  column-gap: 8px;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    bottom: 3.5%;
+    left: 7%;
+  }
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    bottom: 5%;
-    left: 5%;
+    bottom: 2.5%;
+    left: 2.5%;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
-    gap: 0;
+    row-gap: 0;
   }
 `;
 
@@ -187,7 +268,6 @@ export const TopSmallerText = styled.span`
 `;
 
 export const TopVotes = styled.div`
-  /* grid-column: 1; */
   font-size: 16px;
   font-weight: 400;
   line-height: 1.2;
