@@ -41,8 +41,8 @@ export const PrevArrowIcon = styled(prevArrow)`
       display: none;
   `};
   
-  ${({ isDisabled }) =>
-    isDisabled &&
+  ${({ isdisabled }) =>
+    isdisabled &&
     css`
       color: ${({ theme }) => theme.colors.waterloo};
   `};
@@ -61,8 +61,8 @@ export const NextArrowIcon = styled(nextArrow)`
       display: none;
     `};
 
-    ${({ isDisabled }) =>
-    isDisabled &&
+    ${({ isdisabled }) =>
+    isdisabled &&
     css`
       color: ${({ theme }) => theme.colors.waterloo};
   `};
