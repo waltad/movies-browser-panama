@@ -116,6 +116,18 @@ export const MainInfo = styled.div`
   position: absolute;
   bottom: 7%;
   left: 14%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  gap: 8px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    bottom: 5%;
+    left: 5%;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    gap: 0;
+  }
 `;
 
 export const BigTitle = styled.div`
@@ -124,15 +136,17 @@ export const BigTitle = styled.div`
   line-height: 1.2;
   text-align: left;
   color: ${({ theme }) => theme.colors.white};
-  /* display: grid;
-  grid-template-columns: auto;
-  gap: 16px; */
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-column: 1 / 3;
+    font-size: 24px;
+  }
 `;
 
 export const TopRating = styled.div`
+  margin-top: 8px;
   display: flex;
   gap: 8px;
-  height: 40px;
 `;
 
 export const TopStar = styled.div`
@@ -140,6 +154,11 @@ export const TopStar = styled.div`
   height: 38px;
   img {
     width: 100%;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 16px;
+    height: 15px;
   }
 `;
 
@@ -150,6 +169,10 @@ export const TopValue = styled.div`
   line-height: 1.3;
   text-align: left;
   color: ${({ theme }) => theme.colors.white};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 14px;
+  }
 `;
 
 export const TopSmallerText = styled.span`
@@ -157,13 +180,23 @@ export const TopSmallerText = styled.span`
   font-weight: 400;
   line-height: 1.2;
   text-align: left;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 10px;
+  }
 `;
 
 export const TopVotes = styled.div`
+  /* grid-column: 1; */
   font-size: 16px;
   font-weight: 400;
   line-height: 1.2;
   text-align: left;
   color: ${({ theme }) => theme.colors.white};
-  margin-top: 16px;
+  margin-top: 4px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 10px;
+    align-self: flex-end;
+  }
 `;
