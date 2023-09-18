@@ -16,7 +16,7 @@ import {
   StyledText,
   Rating,
   Value,
-  SmallerText,
+  Votes,
   Description,
   MainInfo,
   BigTitle,
@@ -25,6 +25,7 @@ import {
   TopValue,
   TopSmallerText,
   TopVotes,
+  SmallerText,
 } from "../movieDetails/styled";
 import noPoster from "../../images/Movie.png";
 import star from "../../images/Star.png";
@@ -106,25 +107,31 @@ const MovieDetails = () => {
               </ProductionAndRelease>
 
               <Genres>
-                {movieDetails.genres ? ( movieDetails.genres).map((genre) => (<Genre>{genre.name}</Genre>)) : null}
+                {movieDetails.genres ? (movieDetails.genres).map((genre) => (<Genre>{genre.name}</Genre>)) : null}
               </Genres>
 
               <Rating>
-                <StyledStar src={star} />
+                <StyledStar>
+                  <img src={star} alt="star" />
+                </StyledStar>
+                
                 <Value>
                   {movieDetails.vote_average ? (movieDetails.vote_average).toFixed(1) : null}
                 </Value>
+                
                 <SmallerText>
                   / 10
                 </SmallerText>
-                <SmallerText>
+                
+                <Votes>
                   {movieDetails.vote_count ? movieDetails.vote_count : null} votes
-                </SmallerText>
+                </Votes>
               </Rating>
-              <Description>
+            </Info>
+
+            <Description>
                 {movieDetails.overview ? movieDetails.overview : null}
               </Description>
-            </Info>
           </MovieSection>
 
           <Section></Section>
