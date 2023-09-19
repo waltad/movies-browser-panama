@@ -1,4 +1,4 @@
-import { takeEvery, call, put, all, delay, select } from "redux-saga/effects";
+import { takeEvery, call, put, all, delay, select, takeLatest } from "redux-saga/effects";
 import { fetchMovieDetails, fetchMovieDetailsError, selectMovieId, setMovieDetails } from "./movieDetailsSlice";
 import { getMovieDetails } from "./getMovieDetails";
 import { saveMovieIdInLocalStorage } from "./movieLocalStorage";
@@ -24,6 +24,6 @@ function* saveMovieIdInLocalStorageHendler() {
 }
 
 export function* movieDetailsSaga() {
-  yield takeEvery(fetchMovieDetails.type, fetchMovieDetailsHandler);
+  yield takeLatest(fetchMovieDetails.type, fetchMovieDetailsHandler);
   yield takeEvery("*", saveMovieIdInLocalStorageHendler);
 }
