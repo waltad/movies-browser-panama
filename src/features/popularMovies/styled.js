@@ -8,6 +8,10 @@ export const Wrapped = styled.div`
   margin: 0 auto;
   padding: 0 20px;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-top: 24px;
+    margin-bottom: 12px;
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
     padding: 0 16px;
   }
@@ -19,6 +23,10 @@ export const MovieList = styled.div`
   flex-direction: row;
   justify-content: space-around;
   gap: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 288px;
+    row-gap: 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
     width: 100%;
@@ -36,6 +44,9 @@ export const Title = styled.div`
   line-height: 1.2;
   text-align: left;
   margin: 56px 0 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 288px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
     font-size: 18px;

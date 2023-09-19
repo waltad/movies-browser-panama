@@ -1,18 +1,18 @@
+import Genre from "../Genre";
+import Genres from "../Genres";
 import {
   Poster,
   MainInfo,
   Wrapper,
   Title,
   Year,
-  Genres,
-  Genre,
   Rating,
-  Star,
   Value,
   Votes,
 } from "./styled";
 import noPoster from "../../images/Movie.png";
 import star from "../../images/Star.png";
+import StyledStar from "../StyledStar";
 import { useSelector } from "react-redux";
 import { selectGenres } from "../../features/moviesSlice";
 
@@ -40,13 +40,15 @@ export const MovieTile = ({ genre_ids, poster_path, title, release_date, vote_av
         <Genres>
           {genre_ids.map((genreId) => {
             const genre = genres.find((g) => g.id === genreId);
-            return <Genre key={genreId}>{genre ? genre.name : "Nieznany gatunek"}</Genre>;
+            return <Genre key={genreId}>{genre ? genre.name : null}</Genre>;
           })}
         </Genres>
       </MainInfo>
 
       <Rating>
-        <Star src={star} alt="star" />
+        <StyledStar>
+          <img src={star} alt="star" />
+        </StyledStar>
         <Value>
           {vote_average ? vote_average.toFixed(1) : null}
         </Value>

@@ -30,6 +30,7 @@ const moviesSlice = createSlice({
 export const {
     fetchPopularMovies,
     setMoviesData,
+    setMovieId,
     fetchError,
     setGenres,
     fetchSearchMovies
