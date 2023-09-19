@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getMovieIdFromLocalStorage } from "./movieLocalStorage";
 
 const movieDetailsSlice = createSlice({
     name: 'movieDetails',
     initialState: {
-        movieId: "",
+        movieId: getMovieIdFromLocalStorage(),
         status: undefined,
         movieDetailsData: {},
     },
