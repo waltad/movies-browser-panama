@@ -12,13 +12,13 @@ import {
 import { imagesAPIw400 } from "../../apiURL";
 import anonymous from "../../images/Picture.png";
 
-const PersonDetailTile = ({ poster }) => {
+const PersonDetailTile = ({ poster, name }) => {
   return (
     <Wrapper>
       <DetailsTile>
         <NoImage src={poster ? `${imagesAPIw400}${poster}` : anonymous} alt="name" />
         <Content>
-          <Title>Liu Yifei</Title>
+          <Title>{name}</Title>
           <DetailsLine>
             <Label>Date of birth:</Label>
             <Info>info</Info>

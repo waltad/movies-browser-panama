@@ -11,18 +11,19 @@ import PersonDetailTile from "../../../common/PersonDetailTile";
 import { LoadingIcon } from "../../../common/States/Loading";
 import { Pagination } from "../../../common/Pagination";
 import { ErrorMessage } from "../../../common/States/Error";
+import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+
 
 const PersonDetails = () => {
-  const id = useParams();
-  const personInfo = useSelector(selectPersonInfo);
-  const status = useSelector(selectPersonStatus);
+  const id = useParams().id;
   const dispatch = useDispatch();
+  const location = useLocation().pathname;
+  const status = useSelector(selectPersonStatus);
+  const personInfo = useSelector(selectPersonInfo);
 
   useEffect(() => {
-    if (id) {
-      dispatch(fetchPersonById(id));
-    } else return <LoadingIcon />;
-  }, [dispatch, id]);
+    dispatch(fetchPersonById(id));
+  }, [dispatch, location, id]);
 
   if (status === "error") return <ErrorMessage />;
   if (status === "loading") return <LoadingIcon />;
@@ -30,7 +31,7 @@ const PersonDetails = () => {
   if (status === "success")
     return (
       <Wrapper>
-        <PersonDetailTile poster={personInfo.personDescription} />
+        <PersonDetailTile poster={personInfo.personDescription} name={personInfo.personDescription} />
         <Pagination />
       </Wrapper>
     );

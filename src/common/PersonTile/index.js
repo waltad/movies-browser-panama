@@ -1,10 +1,10 @@
-import { Container, ImageBox, Image, Name, AdditionalInfo } from "./styled";
+import { ContainerLink, ImageBox, Image, Name, AdditionalInfo } from "./styled";
 import { imagesAPIw200 } from "../../apiURL";
 import anonymous from "../../images/Picture.png";
 
-export const PersonTile = ({ name, profile_path, additionalContent }) => {
+export const PersonTile = ({ name, profile_path, additionalContent, id, role }) => {
   return (
-    <Container>
+    <ContainerLink to={`/personDetails/?id=${id}`} key={`${id}${role}`}>
       <ImageBox>
         <Image
           src={profile_path ? `${imagesAPIw200}${profile_path}` : anonymous}
@@ -13,6 +13,6 @@ export const PersonTile = ({ name, profile_path, additionalContent }) => {
       </ImageBox>
       <Name>{name}</Name>
       <AdditionalInfo>{additionalContent}</AdditionalInfo>
-    </Container>
+    </ContainerLink>
   );
 };
