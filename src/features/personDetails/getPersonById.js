@@ -14,4 +14,4 @@ export const getPersonById = async (id) => {
     console.error(error);
   }
 };
-// This function is very similar to the getPeople function. The only difference is that we are now passing in an id as an argument. We then use that id to fetch the data for a specific person. The data is then returned.
+
