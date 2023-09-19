@@ -5,7 +5,7 @@ import {
   selectStatus,
   selectData,
 } from "../moviesSlice";
-import { setMovieId } from "../moviesSlice";
+import { setMovieId } from "../movieDetailsSlice";
 import { MovieTile } from "../../common/MovieTile";
 import { ErrorMessage } from "../../common/States/Error";
 import { LoadingIcon } from "../../common/States/Loading";

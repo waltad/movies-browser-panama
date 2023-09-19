@@ -30,7 +30,7 @@ import {
 import noPoster from "../../images/Movie.png";
 import star from "../../images/Star.png";
 import StyledStar from "../../common/StyledStar";
-import { selectMovieId } from "../moviesSlice";
+import { selectMovieId } from "../movieDetailsSlice";
 import { fetchMovieDetails, selectMovieDetailsData, selectMovieDetailsStatus } from "../movieDetailsSlice";
 import { ErrorMessage } from "../../common/States/Error";
 import { LoadingIcon } from "../../common/States/Loading";

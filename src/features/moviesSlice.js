@@ -7,7 +7,6 @@ const moviesSlice = createSlice({
         status: undefined,
         moviesData: [],
         genres: [],
-        movieId: "",
     },
     reducers: {
         nextPage: state => {
@@ -35,9 +34,6 @@ const moviesSlice = createSlice({
         setGenres: (state, { payload: genres }) => {
             state.genres = genres;
         },
-        setMovieId: (state, { payload: id }) => {
-            state.movieId = id;
-        }
     },
 });
 
@@ -58,6 +54,5 @@ export const selectPage = state => selectMoviesState(state).page;
 export const selectStatus = state => selectMoviesState(state).status;
 export const selectData = state => selectMoviesState(state).moviesData;
 export const selectGenres = state => selectMoviesState(state).genres;
-export const selectMovieId = state => selectMoviesState(state).movieId;
 
 export default moviesSlice.reducer;
