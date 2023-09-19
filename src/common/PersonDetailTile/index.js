@@ -9,13 +9,14 @@ import {
   Wrapper,
   DetailsLine,
 } from "./styled";
+import { imagesAPIw400 } from "../../apiURL";
 import anonymous from "../../images/Picture.png";
 
-const PersonDetailTile = () => {
+const PersonDetailTile = ({ poster }) => {
   return (
     <Wrapper>
       <DetailsTile>
-        <NoImage src={anonymous} alt="name" />
+        <NoImage src={poster ? `${imagesAPIw400}${poster}` : anonymous} alt="name" />
         <Content>
           <Title>Liu Yifei</Title>
           <DetailsLine>

@@ -28,3 +28,5 @@ export const peopleUrl = "https://api.themoviedb.org/3/person/popular";
 
 export const imagesAPIw200 = "https://image.tmdb.org/t/p/w200";
 
+export const imagesAPIw400 = "https://image.tmdb.org/t/p/w400/";
+
