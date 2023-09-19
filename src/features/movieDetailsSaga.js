@@ -2,7 +2,7 @@ import { takeEvery, call, put, all, delay, select, takeLatest } from "redux-saga
 import { fetchMovieDetails, fetchMovieDetailsError, selectMovieId, setMovieDetails } from "./movieDetailsSlice";
 import { getMovieDetails } from "./getMovieDetails";
 import { saveMovieIdInLocalStorage } from "./movieLocalStorage";
-// import { getGenresList } from "./getGenresList";
+// import { getMovieCredits } from "./getMovieCredits";
 
 function* fetchMovieDetailsHandler() {
   try {
@@ -10,10 +10,10 @@ function* fetchMovieDetailsHandler() {
     const movieId = yield select(selectMovieId);
     const [movieDetails] = yield all([
       call(getMovieDetails, movieId),
-      // call(getGenresList),
+      // call(getMovieCredits, movieId),
     ]);
     yield put(setMovieDetails(movieDetails));
-    // yield put(setGenres(genres));
+    // yield put(setMovieCredits(movieCredits));
   } catch (error) {
     yield put(fetchMovieDetailsError());
   }

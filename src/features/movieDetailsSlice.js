@@ -7,6 +7,7 @@ const movieDetailsSlice = createSlice({
         movieId: getMovieIdFromLocalStorage(),
         status: undefined,
         movieDetailsData: {},
+        movieCreditsData: {},
     },
     reducers: {
         setMovieId: (state, { payload: id }) => {
@@ -36,5 +37,6 @@ export const selectMovieDetailsState = state => state.movieDetails;
 export const selectMovieId = state => selectMovieDetailsState(state).movieId;
 export const selectMovieDetailsStatus = state => selectMovieDetailsState(state).status;
 export const selectMovieDetailsData = state => selectMovieDetailsState(state).movieDetailsData;
+export const selectMovieCreditsData = state => selectMovieDetailsState(state).movieCreditsData;
 
 export default movieDetailsSlice.reducer;
