@@ -38,7 +38,7 @@ const PopularMovies = () => {
           <Title>Popular Movies</Title>
           <MovieList>
             {popularMovies.map((movie) => (
-              <StyledNavLink key={`${movie.id}`} onClick={() => dispatch(setMovieId(movie.id))} to="/movieDetails">
+              <StyledNavLink key={`${movie.id}`} onClick={() => dispatch(setMovieId(movie.id))} to={`/movieDetails/${movie.id}`}>
                 <MovieTile
                   poster_path={movie.poster_path}
                   title={movie.title}
