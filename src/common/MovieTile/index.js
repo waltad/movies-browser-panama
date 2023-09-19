@@ -21,10 +21,10 @@ const posterSize = "w300";
 
 
 export const MovieTile = ({ genre_ids, poster_path, title, release_date, vote_average, vote_count }) => {
-  
+
   const genres = useSelector(selectGenres);
 
-  return (
+  return vote_count ? (
     <Wrapper>
       <Poster
         src={poster_path ? `${securyBaseUrl}${posterSize}${poster_path}` : noPoster} alt="poster"
@@ -50,10 +50,37 @@ export const MovieTile = ({ genre_ids, poster_path, title, release_date, vote_av
           <img src={star} alt="star" />
         </StyledStar>
         <Value>
-          {vote_average ? vote_average : null}
+          {vote_average ? vote_average.toFixed(1) : null}
         </Value>
         <Votes>
-          {vote_count ? vote_count : null} votes
+          {vote_count} votes
+        </Votes>
+      </Rating>
+    </Wrapper>
+  ) : (
+    <Wrapper>
+      <Poster
+        src={poster_path ? `${securyBaseUrl}${posterSize}${poster_path}` : noPoster} alt="poster"
+      />
+
+      <MainInfo>
+        <Title>
+          {title ? title : null}
+        </Title>
+        <Year>
+          {release_date ? release_date.slice(0, 4) : null}
+        </Year>
+        <Genres>
+          {genre_ids.map((genreId) => {
+            const genre = genres.find((g) => g.id === genreId);
+            return <Genre key={genreId}>{genre ? genre.name : "Nieznany gatunek"}</Genre>;
+          })}
+        </Genres>
+      </MainInfo>
+
+      <Rating>
+        <Votes>
+          No votes yet
         </Votes>
       </Rating>
     </Wrapper>
