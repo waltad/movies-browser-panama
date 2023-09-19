@@ -1,18 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getMovieIdFromLocalStorage } from "./movieLocalStorage";
 
 const movieDetailsSlice = createSlice({
     name: 'movieDetails',
     initialState: {
-        movieId: getMovieIdFromLocalStorage(),
         status: undefined,
         movieDetailsData: {},
         movieCreditsData: {},
     },
     reducers: {
-        setMovieId: (state, { payload: id }) => {
-            state.movieId = id;
-        },
         fetchMovieDetails: state => {
             state.status = "loading";
         },
@@ -27,7 +22,6 @@ const movieDetailsSlice = createSlice({
 });
 
 export const {
-    setMovieId,
     fetchMovieDetails,
     setMovieDetails,
     fetchMovieDetailsError,

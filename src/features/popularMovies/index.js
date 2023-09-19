@@ -5,7 +5,6 @@ import {
   selectStatus,
   selectData,
 } from "../moviesSlice";
-import { setMovieId } from "../movieDetailsSlice";
 import { MovieTile } from "../../common/MovieTile";
 import { ErrorMessage } from "../../common/States/Error";
 import { LoadingIcon } from "../../common/States/Loading";
@@ -21,7 +20,7 @@ const PopularMovies = () => {
 
   useEffect(() => {
     if (location.includes("movies")) dispatch(fetchPopularMovies());
-  }, []);
+  }, [dispatch, location]);
 
   if (status === "error") {
     return <ErrorMessage />;
@@ -38,7 +37,7 @@ const PopularMovies = () => {
           <Title>Popular Movies</Title>
           <MovieList>
             {popularMovies.map((movie) => (
-              <StyledNavLink key={`${movie.id}`} onClick={() => dispatch(setMovieId(movie.id))} to={`/movieDetails/${movie.id}`}>
+              <StyledNavLink key={`${movie.id}`} to={`/movieDetails/${movie.id}`}>
                 <MovieTile
                   poster_path={movie.poster_path}
                   title={movie.title}

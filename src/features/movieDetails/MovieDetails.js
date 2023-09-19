@@ -33,7 +33,7 @@ import StyledStar from "../../common/StyledStar";
 import { fetchMovieDetails, selectMovieDetailsData, selectMovieDetailsStatus } from "../movieDetailsSlice";
 import { ErrorMessage } from "../../common/States/Error";
 import { LoadingIcon } from "../../common/States/Loading";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams } from "react-router-dom";
 
 const securyBaseUrl = "https://image.tmdb.org/t/p/";
 const bigPosterSize = "original";
@@ -41,15 +41,14 @@ const posterSize = "w500";
 
 const MovieDetails = () => {
   const id = useParams().id;
-  console.log(`to jest id: ${id}`);
   const dispatch = useDispatch();
   const location = useLocation().pathname;
   const status = useSelector(selectMovieDetailsStatus);
   const movieDetails = useSelector(selectMovieDetailsData);
 
   useEffect(() => {
-    if (location.includes("movieDetails")) dispatch(fetchMovieDetails());
-  }, []);
+    if (location.includes("movieDetails")) dispatch(fetchMovieDetails(id));
+  }, [dispatch, location, id]);
 
   if (status === "error") {
     return <ErrorMessage />;
