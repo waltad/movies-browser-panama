@@ -4,9 +4,10 @@ import { getMovieDetails } from "./getMovieDetails";
 import { saveMovieIdInLocalStorage } from "./movieLocalStorage";
 // import { getGenresList } from "./getGenresList";
 
-function* fetchMovieDetailsHandler(movieId) {
+function* fetchMovieDetailsHandler() {
   try {
     yield delay(1000);
+    const movieId = yield select(selectMovieId);
     const [movieDetails] = yield all([
       call(getMovieDetails, movieId),
       // call(getGenresList),

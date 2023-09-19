@@ -10,8 +10,7 @@ const options = {
 
 export const getMovieDetails = async (movieId) => {
   
-  const id = movieId.payload;
-  const urlMovieDetails = `https://api.themoviedb.org/3/movie/${id}?language=en-US`;
+  const urlMovieDetails = `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`;
   
   const response = await fetch(urlMovieDetails, options);
 

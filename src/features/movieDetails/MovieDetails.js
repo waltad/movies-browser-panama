@@ -30,7 +30,6 @@ import {
 import noPoster from "../../images/Movie.png";
 import star from "../../images/Star.png";
 import StyledStar from "../../common/StyledStar";
-import { selectMovieId } from "../movieDetailsSlice";
 import { fetchMovieDetails, selectMovieDetailsData, selectMovieDetailsStatus } from "../movieDetailsSlice";
 import { ErrorMessage } from "../../common/States/Error";
 import { LoadingIcon } from "../../common/States/Loading";
@@ -42,12 +41,11 @@ const posterSize = "w500";
 const MovieDetails = () => {
   const dispatch = useDispatch();
   const location = useLocation().pathname;
-  const movieId = (useSelector(selectMovieId)).toString();
   const status = useSelector(selectMovieDetailsStatus);
   const movieDetails = useSelector(selectMovieDetailsData);
 
   useEffect(() => {
-    if (location.includes("movieDetails")) dispatch(fetchMovieDetails(movieId));
+    if (location.includes("movieDetails")) dispatch(fetchMovieDetails());
   }, []);
 
   if (status === "error") {
