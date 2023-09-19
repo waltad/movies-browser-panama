@@ -14,4 +14,3 @@ export const getPersonById = async (id) => {
     console.error(error);
   }
 };
-

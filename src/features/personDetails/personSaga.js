@@ -10,7 +10,7 @@ function* fetchPersonByIdHandler({ payload }) {
   try {
     const personDescription = yield call(getPersonById, payload);
     const personInfo = {
-      personDescription: personDescription,
+      personDescription: personDescription
     };
     yield delay(500);
     yield put(fetchPersonByIdSuccess(personInfo));
