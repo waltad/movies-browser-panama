@@ -6,7 +6,6 @@ import Genre from "../../common/Genre";
 import {
   MoviePage,
   MovieSection,
-  Section,
   BigPosterWithGradient,
   Poster,
   Info,
@@ -26,11 +25,15 @@ import {
   TopSmallerText,
   TopVotes,
   SmallerText,
+  PeopleList,
+  StyledNavLink,
+  Section,
 } from "../movieDetails/styled";
 import noPoster from "../../images/Movie.png";
 import star from "../../images/Star.png";
 import StyledStar from "../../common/StyledStar";
-import { fetchMovieDetails, selectMovieDetailsData, selectMovieDetailsStatus } from "../movieDetailsSlice";
+import { PersonTile } from "../../common/PersonTile";
+import { fetchMovieDetails, selectMovieCreditsData, selectMovieDetailsData, selectMovieDetailsStatus } from "../movieDetailsSlice";
 import { ErrorMessage } from "../../common/States/Error";
 import { LoadingIcon } from "../../common/States/Loading";
 import { useParams } from "react-router-dom";
@@ -45,6 +48,8 @@ const MovieDetails = () => {
   const location = useLocation().pathname;
   const status = useSelector(selectMovieDetailsStatus);
   const movieDetails = useSelector(selectMovieDetailsData);
+  const cast = useSelector(selectMovieCreditsData).cast;
+  const crew = useSelector(selectMovieCreditsData).crew;
 
   useEffect(() => {
     if (location.includes("movies/"))
@@ -160,7 +165,39 @@ const MovieDetails = () => {
               </Description>
             </MovieSection>
 
-            <Section></Section>
+            <Section>
+              <Title>Cast</Title>
+            </Section>
+            
+            <PeopleList>
+              {cast.map((actor) => (
+                <StyledNavLink key={actor.id} to="/personDetails">
+                  <PersonTile
+                    name={actor.name}
+                    profile_path={actor.profile_path}
+                    id={actor.id}
+                    additionalContent={actor.character}
+                  />
+                </StyledNavLink>
+              ))}
+            </PeopleList>
+
+            <Section>
+              <Title>Crew</Title>
+            </Section>
+            
+            <PeopleList>
+              {crew.map((person) => (
+                <StyledNavLink key={person.id} to="/personDetails">
+                  <PersonTile
+                    name={person.name}
+                    profile_path={person.profile_path}
+                    id={person.id}
+                    additionalContent={person.job}
+                  />
+                </StyledNavLink>
+              ))}
+            </PeopleList>
           </MoviePage>
         </>
       );

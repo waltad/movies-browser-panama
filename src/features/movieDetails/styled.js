@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {NavLink} from "react-router-dom";
 
 export const MoviePage = styled.div`
   display: flex;
@@ -278,5 +279,30 @@ export const TopVotes = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 10px;
     align-self: flex-end;
+  }
+`;
+
+export const PeopleList = styled(Section)`
+  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 16px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    height: 100%;
+  }
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.black};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    width: 100%;
   }
 `;
