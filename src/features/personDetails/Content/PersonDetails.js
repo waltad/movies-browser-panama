@@ -11,7 +11,7 @@ import PersonDetailTile from "../../../common/PersonDetailTile";
 import { LoadingIcon } from "../../../common/States/Loading";
 import { Pagination } from "../../../common/Pagination";
 import { ErrorMessage } from "../../../common/States/Error";
-import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { useLocation } from "react-router-dom";
 
 
 const PersonDetails = () => {
@@ -31,7 +31,7 @@ const PersonDetails = () => {
   if (status === "success")
     return (
       <Wrapper>
-        <PersonDetailTile poster={personInfo.personDescription} name={personInfo.personDescription} />
+        <PersonDetailTile poster={personInfo.personDescription.path_name} name={personInfo.personDescription.name} />
         <Pagination />
       </Wrapper>
     );
