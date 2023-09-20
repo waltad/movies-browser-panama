@@ -47,7 +47,8 @@ const MovieDetails = () => {
   const movieDetails = useSelector(selectMovieDetailsData);
 
   useEffect(() => {
-    if (location.includes("movies/")) dispatch(fetchMovieDetails(id));
+    if (location.includes("movies/"))
+      dispatch(fetchMovieDetails(id));
   }, [dispatch, location, id]);
 
   switch (status) {
@@ -128,7 +129,7 @@ const MovieDetails = () => {
                 <Genres>
                   {movieDetails.genres ?
                     (movieDetails.genres).map((genre) => (
-                      <Genre>{genre.name}</Genre>
+                      <Genre key={genre.name}>{genre.name}</Genre>
                     )) : null
                   }
                 </Genres>
