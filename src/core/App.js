@@ -11,11 +11,11 @@ function App() {
       <HashRouter>
         <Navigation />
         <Switch>
+          <Route path="/movies/:id">
+            <MovieDetails />
+          </Route>
           <Route path="/movies">
             <BrowseMovies />
-          </Route>
-          <Route path="/movieDetails/:id">
-            <MovieDetails />
           </Route>
           <Route path="/people">
             <PopularPeople />
