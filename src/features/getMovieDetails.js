@@ -21,3 +21,17 @@ export const getMovieDetails = async (movieId) => {
   const result = await response.json();
   return result;
 };
+
+export const getMovieCredits = async (movieId) => {
+  
+  const urlMovieCredits = `https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`;
+  
+  const response = await fetch(urlMovieCredits, options);
+
+  if (!response.ok) {
+    new Error(response.statusText);
+  }
+
+  const result = await response.json();
+  return result;
+};

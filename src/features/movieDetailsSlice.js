@@ -15,6 +15,10 @@ const movieDetailsSlice = createSlice({
             state.movieDetailsData = data;
             state.status = "success";
         },
+        setMovieCredits: (state, { payload: data }) => {
+            state.movieCreditsData = data;
+            state.status = "success";
+        },
         fetchMovieDetailsError: state => {
             state.status = "error";
         },
@@ -24,6 +28,7 @@ const movieDetailsSlice = createSlice({
 export const {
     fetchMovieDetails,
     setMovieDetails,
+    setMovieCredits,
     fetchMovieDetailsError,
 } = movieDetailsSlice.actions;
 

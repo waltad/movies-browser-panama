@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const MoviePage = styled.div`
   display: flex;
@@ -33,29 +34,60 @@ export const BigPosterWithGradient = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(189.44deg, rgba(0, 0, 0, 0) 58.48%, rgba(0, 0, 0, 0.106473) 63.17%, rgba(0, 0, 0, 0.235359) 68.85%, rgba(0, 0, 0, 0.492821) 78.08%,
-      rgba(0, 0, 0, 0.740286) 85.86%, #000000 92.87%),
-      linear-gradient(270deg, #000000 14.11%, rgba(0, 0, 0, 0.873268) 15.08%, rgba(0, 0, 0, 0.720529) 16.51%, rgba(0, 0, 0, 0.294577) 19.99%, rgba(0, 0, 0, 0.159921) 21.88%, rgba(0, 0, 0, 0) 25.68%),
-      linear-gradient(90deg, #000000 13.6%, rgba(0, 0, 0, 0.984059) 14.58%, rgba(0, 0, 0, 0.967732) 15.44%, rgba(0, 0, 0, 0.865569) 16.3%, rgba(0, 0, 0, 0.230315) 22.87%, rgba(0, 0, 0, 0) 26.64%),
-      linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.689555) 4.66%, rgba(0, 0, 0, 0.439033) 9.34%, rgba(0, 0, 0, 0.20628) 15.16%, rgba(0, 0, 0, 0) 24.22%);
+    background-image: linear-gradient(
+        189.44deg,
+        rgba(0, 0, 0, 0) 58.48%,
+        rgba(0, 0, 0, 0.106473) 63.17%,
+        rgba(0, 0, 0, 0.235359) 68.85%,
+        rgba(0, 0, 0, 0.492821) 78.08%,
+        rgba(0, 0, 0, 0.740286) 85.86%,
+        #000000 92.87%
+      ),
+      linear-gradient(
+        270deg,
+        #000000 14.11%,
+        rgba(0, 0, 0, 0.873268) 15.08%,
+        rgba(0, 0, 0, 0.720529) 16.51%,
+        rgba(0, 0, 0, 0.294577) 19.99%,
+        rgba(0, 0, 0, 0.159921) 21.88%,
+        rgba(0, 0, 0, 0) 25.68%
+      ),
+      linear-gradient(
+        90deg,
+        #000000 13.6%,
+        rgba(0, 0, 0, 0.984059) 14.58%,
+        rgba(0, 0, 0, 0.967732) 15.44%,
+        rgba(0, 0, 0, 0.865569) 16.3%,
+        rgba(0, 0, 0, 0.230315) 22.87%,
+        rgba(0, 0, 0, 0) 26.64%
+      ),
+      linear-gradient(
+        180deg,
+        #000000 0%,
+        rgba(0, 0, 0, 0.689555) 4.66%,
+        rgba(0, 0, 0, 0.439033) 9.34%,
+        rgba(0, 0, 0, 0.20628) 15.16%,
+        rgba(0, 0, 0, 0) 24.22%
+      );
     background-clip: content-box;
   }
 `;
 
 export const Section = styled.section`
-  display:grid;
   width: 71%;
+  margin: 0 auto;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
     width: 85%;
   }
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 95%;
   }
 `;
 
 export const MovieSection = styled(Section)`
+  display: grid;
   grid-template-columns: 312px auto;
   grid-template-rows: auto auto;
   gap: 40px;
@@ -106,6 +138,16 @@ export const Title = styled.div`
     font-weight: 500;
     line-height: 1.3;
   }
+
+  ${({ credits }) =>
+    credits &&
+    css`
+      margin-bottom: 20px;
+      
+      @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        margin-bottom: 8px;
+      }
+  `}
 `;
 
 export const Year = styled.div`
@@ -116,7 +158,7 @@ export const Year = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 13px;
-    color: ${({theme}) => theme.colors.waterloo};
+    color: ${({ theme }) => theme.colors.waterloo};
   }
 `;
 
@@ -164,12 +206,12 @@ export const Votes = styled.span`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 13px;
-    color: ${({theme}) => theme.colors.waterloo};
+    color: ${({ theme }) => theme.colors.waterloo};
   }
 `;
 
 export const SmallerText = styled(Votes)`
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     display: none;
   }
 `;
@@ -184,7 +226,7 @@ export const Description = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     grid-column: 1 / 3;
     font-size: 14px;
-  } 
+  }
 `;
 
 export const MainInfo = styled.div`
@@ -201,7 +243,7 @@ export const MainInfo = styled.div`
     bottom: 3.5%;
     left: 7%;
   }
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     bottom: 2.5%;
     left: 2.5%;
@@ -278,5 +320,34 @@ export const TopVotes = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 10px;
     align-self: flex-end;
+  }
+`;
+
+export const Creditsist = styled.ul`
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 16px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    height: 100%;
+  }
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.black};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    width: 100%;
   }
 `;
