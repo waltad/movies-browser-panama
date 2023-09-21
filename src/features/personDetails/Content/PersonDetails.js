@@ -13,7 +13,6 @@ import { Pagination } from "../../../common/Pagination";
 import { ErrorMessage } from "../../../common/States/Error";
 import { useLocation } from "react-router-dom";
 
-
 const PersonDetails = () => {
   const id = useParams().id;
   const dispatch = useDispatch();
@@ -22,6 +21,7 @@ const PersonDetails = () => {
   const personInfo = useSelector(selectPersonInfo);
 
   useEffect(() => {
+    if (location.includes("person/"))
     dispatch(fetchPersonById(id));
   }, [dispatch, location, id]);
 
@@ -31,11 +31,13 @@ const PersonDetails = () => {
   if (status === "success")
     return (
       <Wrapper>
-        <PersonDetailTile poster={personInfo.personDescription.path_name} name={personInfo.personDescription.name} />
+        <PersonDetailTile
+          poster={personInfo.personDescription.profile_path}
+          name={personInfo.personDescription.name}
+        />
         <Pagination />
       </Wrapper>
     );
 };
 
 export default PersonDetails;
-
