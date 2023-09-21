@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-export const ContainerLink = styled(Link)`
+export const Container = styled.div`
     width: 208px;
     height: 339px;
     background-color: ${({ theme }) => theme.colors.white};
