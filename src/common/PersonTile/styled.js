@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const Container = styled.article`
-    width: 208px;
+    min-width: 208px;
     height: 339px;
     background-color: ${({ theme }) => theme.colors.white};
     box-shadow: ${({ theme }) => theme.tileShadow};
@@ -11,7 +11,7 @@ export const Container = styled.article`
     align-items: center;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        width: 136px;
+        min-width: 136px;
         height: 245px;
         border-radius: 5px;
         padding: 8px;

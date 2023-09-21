@@ -1,21 +1,21 @@
 import { styled } from "styled-components";
 
 export const Wrapper = styled.div`
-  width: 324px;
+  min-width: 324px;
   height: 650px;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: ${({ theme }) => theme.tileShadow};
   padding: 16px;
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    grid-template-columns: auto auto;
-    grid-template-rows: 1fr 3fr;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
     column-gap: 16px;
-    width: 288px;
+    min-width: 288px;
     height: 201px;
   }
 `;
@@ -24,6 +24,7 @@ export const Poster = styled.img`
   width: 292px;
   height: 434px;
   border-radius: 5px;
+  justify-self: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 114px;
