@@ -191,8 +191,8 @@ const MovieDetails = () => {
               <Title credits>Cast</Title>
 
               <Creditsist>
-                {cast.map((actor) => (
-                  <StyledNavLink key={actor.id} to="/personDetails">
+                {cast.map((actor, index) => (
+                  <StyledNavLink key={index} to={`/person/${actor.id}`}>
                     <PersonTile
                       name={actor.name}
                       profile_path={actor.profile_path}
@@ -208,8 +208,8 @@ const MovieDetails = () => {
               <Title credits>Crew</Title>
 
               <Creditsist>
-                {crew.map((person) => (
-                  <StyledNavLink key={person.id} to="/personDetails">
+                {crew.map((person, index) => (
+                  <StyledNavLink key={index} to={`/person/${person.id}`}>
                     <PersonTile
                       name={person.name}
                       profile_path={person.profile_path}
