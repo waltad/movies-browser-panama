@@ -14,7 +14,7 @@ export const DetailsTile = styled.article`
   margin-top: 56px;
   display: grid;
   grid-template-columns: 1fr 3fr;
-  grid-template-rows: 1fr 3fr;
+  grid-template-rows: 0fr 3fr;
   grid-gap: 0px 40px;
   align-content: start;
   justify-content: start;
@@ -24,7 +24,7 @@ export const DetailsTile = styled.article`
     margin-top: 24px;
     grid-gap: 0px 24px;
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 60%;
+    grid-template-rows: 0fr 60%;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
@@ -66,6 +66,10 @@ export const NoImage = styled.img`
 
 export const Content = styled.div`
   padding: 8px 0px 24px 0px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    padding-bottom: 16px;
+  }
 `;
 
 export const Title = styled.h1`
