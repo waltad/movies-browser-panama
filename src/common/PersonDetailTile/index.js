@@ -12,28 +12,32 @@ import {
 import { imagesAPIw400 } from "../../apiURL";
 import anonymous from "../../images/Picture.png";
 
-const PersonDetailTile = ({ poster, name }) => {
+const PersonDetailTile = ({
+  poster,
+  name,
+  birthday,
+  birthplace,
+  biography,
+}) => {
   return (
     <Wrapper>
       <DetailsTile>
-        <NoImage src={poster ? `${imagesAPIw400}${poster}` : anonymous} alt="name" />
+        <NoImage
+          src={poster ? `${imagesAPIw400}${poster}` : anonymous}
+          alt="name"
+        />
         <Content>
           <Title>{name}</Title>
           <DetailsLine>
             <Label>Date of birth:</Label>
-            <Info>info</Info>
+            <Info>{birthday}</Info>
           </DetailsLine>
           <DetailsLine>
             <Label>Place of birth:</Label>
-            <Info>info</Info>
+            <Info>{birthplace}</Info>
           </DetailsLine>
         </Content>
-        <Description>
-          Liu Yifei was born in Wuhan, Hubei, Province of China on August 25th,
-          1987. She began modeling at the age of 8 and was trained in singing,
-          dancing and the piano. Moving to the United States at 10 with her
-          mother, Liu lived there for four years.
-        </Description>
+        <Description>{biography}</Description>
       </DetailsTile>
     </Wrapper>
   );

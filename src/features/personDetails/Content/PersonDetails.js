@@ -9,7 +9,7 @@ import {
 import { Wrapper } from "./styled";
 import PersonDetailTile from "../../../common/PersonDetailTile";
 import { LoadingIcon } from "../../../common/States/Loading";
-import { Pagination } from "../../../common/Pagination";
+// import { Pagination } from "../../../common/Pagination";
 import { ErrorMessage } from "../../../common/States/Error";
 import { useLocation } from "react-router-dom";
 
@@ -34,8 +34,11 @@ const PersonDetails = () => {
         <PersonDetailTile
           poster={personInfo.personDescription.profile_path}
           name={personInfo.personDescription.name}
+          birthday={personInfo.personDescription.birthday}
+          birthplace={personInfo.personDescription.place_of_birth}
+          biography={personInfo.personDescription.biography}
         />
-        <Pagination />
+        {/* <Pagination /> */}
       </Wrapper>
     );
 };
