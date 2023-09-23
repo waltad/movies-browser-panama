@@ -31,10 +31,10 @@ const PersonDetailTile = ({
           <Title>{name}</Title>
           <DetailsLine>
             <LabelDate>Date of birth:</LabelDate>
-            <LabelDate mobile none>Birth:</LabelDate>
+            <LabelDate data-mobile data-none>Birth:</LabelDate>
             <Info>{new Date(birthday).toLocaleDateString()}</Info>
           </DetailsLine>
-          <DetailsLine mobile>
+          <DetailsLine data-mobile>
             <LabelPlace>Place of birth:</LabelPlace>
             <Info>{birthplace}</Info>
           </DetailsLine>

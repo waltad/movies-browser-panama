@@ -98,7 +98,7 @@ export const DetailsLine = styled.div`
   display: flex;
   flex-direction: row;
 
-  ${({ mobile }) =>
+  ${({ 'data-mobile': mobile }) =>
     mobile &&
     css`
       @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
@@ -131,13 +131,13 @@ export const LabelDate = styled.p`
     display: none;
   }
 
-  ${({ none }) =>
+  ${({ 'data-none': none }) =>
     none &&
     css`
       display: none;
     `}
 
-  ${({ mobile }) =>
+  ${({ 'data-mobile': mobile }) =>
     mobile &&
     css`
       @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
