@@ -26,7 +26,7 @@ const PopularPeople = () => {
   useEffect(() => {
     if (location.includes("movie")) dispatch();
     else dispatch(fetchPeople());
-  }, []);
+  }, [dispatch, location]);
 
   if (status === "error") {
     return <ErrorMessage />;
