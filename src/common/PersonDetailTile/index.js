@@ -3,7 +3,8 @@ import {
   NoImage,
   Content,
   Title,
-  Label,
+  LabelDate,
+  LabelPlace,
   Info,
   Description,
   Wrapper,
@@ -29,11 +30,12 @@ const PersonDetailTile = ({
         <Content>
           <Title>{name}</Title>
           <DetailsLine>
-            <Label>Date of birth:</Label>
-            <Info>{birthday}</Info>
+            <LabelDate>Date of birth:</LabelDate>
+            <LabelDate mobile none>Birth:</LabelDate>
+            <Info>{new Date(birthday).toLocaleDateString()}</Info>
           </DetailsLine>
-          <DetailsLine>
-            <Label>Place of birth:</Label>
+          <DetailsLine mobile>
+            <LabelPlace>Place of birth:</LabelPlace>
             <Info>{birthplace}</Info>
           </DetailsLine>
         </Content>

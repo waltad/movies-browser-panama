@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -97,6 +97,16 @@ export const Title = styled.h1`
 export const DetailsLine = styled.div`
   display: flex;
   flex-direction: row;
+
+  ${({ mobile }) =>
+    mobile &&
+    css`
+      @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+      }
+    `}
 `;
 
 export const Details = styled.div`
@@ -105,15 +115,49 @@ export const Details = styled.div`
   align-items: flex-start;
 `;
 
-export const Label = styled.p`
+export const LabelDate = styled.p`
   font-size: 18px;
   color: ${({ theme }) => theme.colors.stormGray};
   font-weight: normal;
   line-height: 120%;
-  margin: 0 11px 3px 0;
+  margin: 0 10px 3px 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 15px;
+    margin-right: 8px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
+
+  ${({ none }) =>
+    none &&
+    css`
+      display: none;
+    `}
+
+  ${({ mobile }) =>
+    mobile &&
+    css`
+      @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        display: flex;
+        font-size: 12px;
+        margin-right: 4px;
+      }
+    `}
+`;
+
+export const LabelPlace = styled.p`
+  font-size: 18px;
+  color: ${({ theme }) => theme.colors.stormGray};
+  font-weight: normal;
+  line-height: 120%;
+  margin: 0 10px 3px 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: 15px;
+    margin-right: 8px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
