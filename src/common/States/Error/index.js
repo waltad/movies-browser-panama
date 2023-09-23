@@ -6,6 +6,6 @@ export const ErrorMessage = () => (
         <ErrorIcon />
         <Heading>Ooops! Something went wrong...</Heading>
         <Subheading>Please check your network connection and try again</Subheading>
-        <Button>Back to home page</Button>
+        <Button to="/movies">Back to home page</Button>
     </Wrapper>
 );

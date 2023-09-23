@@ -1,18 +1,16 @@
-import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { useLocation } from "react-router-dom";
 import {
     LogoIcon,
     LogoName,
     NavigationBar,
     NavigationItem,
     NavigationList,
-    SearchBar,
     Wrapper,
     StyledNavLink,
     Container,
-    SearchBox,
-    SearchIcon,
     LogoItemsLink
 } from "./styled";
+import { Search } from "./Search";
 
 export const Navigation = () => {
     const location = useLocation();
@@ -36,10 +34,7 @@ export const Navigation = () => {
                         </NavigationItem>
                     </NavigationList>
                 </Container>
-                <SearchBox>
-                    <SearchIcon />
-                    <SearchBar placeholder={placeholder} />
-                </SearchBox>
+                <Search placeholder={placeholder} />
             </Wrapper>
         </NavigationBar >
     );
