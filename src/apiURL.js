@@ -7,6 +7,8 @@ export const APIkey = "ee4ad061bf5d1e6df73bdeb8e9166756";
 
 // export const detailsUrl = "https://api.themoviedb.org/3/movie/{movie_id}";
 
+export const personAPI = "https://api.themoviedb.org/3/person/";
+
 // export const creditsUrl =
 //   "https://api.themoviedb.org/3/movie/{movie_id}/credits";
 
@@ -25,4 +27,6 @@ export const peopleUrl = "https://api.themoviedb.org/3/person/popular";
 // export const configuration = "https://api.themoviedb.org/3/configuration";
 
 export const imagesAPIw200 = "https://image.tmdb.org/t/p/w200";
+
+export const imagesAPIw400 = "https://image.tmdb.org/t/p/w400/";
 

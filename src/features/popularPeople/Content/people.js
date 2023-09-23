@@ -68,7 +68,7 @@ const PopularPeople = () => {
               <Header>{`Search results for "${query}" (${total_results})`}</Header>
               <PeopleList>
                 {peopleList.map((person) => (
-                  <StyledNavLink key={person.id} to="/personDetails">
+                  <StyledNavLink key={person.id} to={`/person/${person.id}`}>
                     <PersonTile
                       name={person.name}
                       profile_path={person.profile_path}
@@ -88,7 +88,7 @@ const PopularPeople = () => {
               <Header>Popular people</Header>
               <PeopleList>
                 {peopleList.map((person) => (
-                  <StyledNavLink key={person.id} to="/personDetails">
+                  <StyledNavLink key={person.id} to={`/person/${person.id}`}>
                     <PersonTile
                       name={person.name}
                       profile_path={person.profile_path}
