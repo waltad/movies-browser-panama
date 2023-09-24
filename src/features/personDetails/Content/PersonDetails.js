@@ -40,13 +40,24 @@ const PersonDetails = () => {
 
         <>
           <CastWrapper>
-            <Title>Movies - cast {``}</Title>
+            <Title>
+              Movies - cast {`(${personInfo.personMovies.cast.length})`}
+            </Title>
             <List>
-              <MovieTile />
+              {personInfo.personMovies.cast.map((movie) => (
+                <MovieTile
+                  key={`${movie.id}${movie.character}`}
+                  id={movie.id}
+                  poster={movie.profile_path}
+                  title={movie.original_title}
+                />
+              ))}
             </List>
           </CastWrapper>
           <CrewWrapper>
-            <Title>Movies - crew {``}</Title>
+            <Title>
+              Movies - crew {`(${personInfo.personMovies.crew.length})`}
+            </Title>
             <List>
               <MovieTile />
             </List>
