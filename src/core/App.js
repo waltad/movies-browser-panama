@@ -17,11 +17,11 @@ function App() {
           <Route path="/movies">
             <BrowseMovies />
           </Route>
+          <Route path="/people/:id">
+            <PersonDetails />
+          </Route>
           <Route path="/people">
             <PopularPeople />
-          </Route>
-          <Route path="/person/:id">
-            <PersonDetails />
           </Route>
           <Route path="/">
             <Redirect to="/movies" />
