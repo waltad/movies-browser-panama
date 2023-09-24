@@ -4,15 +4,17 @@ import {
   fetchPersonByIdSuccess,
   fetchPersonByIdError,
 } from "./personSlice";
-import { getPersonById } from "./getPersonById";
+import { getPersonById, getPersonInMoviesByID } from "./getPersonById";
 
 function* fetchPersonByIdHandler({ payload }) {
   try {
     const personDescription = yield call(getPersonById, payload);
+    const personMovies = yield call (getPersonInMoviesByID, payload);
     const personInfo = {
-      personDescription: personDescription
+      personDescription: personDescription,
+      personMovies: personMovies,
     };
-    yield delay(500);
+    yield delay(300);
     yield put(fetchPersonByIdSuccess(personInfo));
   } catch (error) {
     yield put(fetchPersonByIdError());
