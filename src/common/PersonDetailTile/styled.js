@@ -14,7 +14,7 @@ export const DetailsTile = styled.article`
   margin-top: 56px;
   display: grid;
   grid-template-columns: 0fr 3fr;
-  grid-template-rows: 1fr 3fr;
+  grid-template-rows: 0fr 3fr;
   grid-gap: 0px 40px;
   align-content: start;
   justify-content: start;
