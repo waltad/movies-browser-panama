@@ -16,7 +16,7 @@ import { useQueryParameter } from "../../../common/Navigation/queryParameters";
 import searchQueryParamName from "../../../common/Navigation/searchQueryParamName";
 import paginationParamName from "../../../common/Pagination/paginationParamName";
 
-const PopularPeople = () => {
+const PopularPeople = ({ previousQuery }) => {
   const dispatch = useDispatch();
   const status = useSelector(selectPeopleStatus);
   const data = useSelector(selectPeopleList);
@@ -68,7 +68,7 @@ const PopularPeople = () => {
               <Header>{`Search results for "${query}" (${total_results})`}</Header>
               <PeopleList>
                 {peopleList.map((person) => (
-                  <StyledNavLink key={person.id} to={`/person/${person.id}`}>
+                  <StyledNavLink key={person.id} to={`/people/${person.id}`}>
                     <PersonTile
                       name={person.name}
                       profile_path={person.profile_path}
@@ -88,7 +88,7 @@ const PopularPeople = () => {
               <Header>Popular people</Header>
               <PeopleList>
                 {peopleList.map((person) => (
-                  <StyledNavLink key={person.id} to={`/person/${person.id}`}>
+                  <StyledNavLink key={person.id} to={`/people/${person.id}`}>
                     <PersonTile
                       name={person.name}
                       profile_path={person.profile_path}
