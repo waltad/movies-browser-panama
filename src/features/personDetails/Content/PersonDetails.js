@@ -6,10 +6,11 @@ import {
   selectPersonStatus,
   fetchPersonById,
 } from "../personSlice";
-import { Wrapper } from "./styled";
+import { Wrapper, Title, List, WrapperM } from "./styled";
 import PersonDetailTile from "../../../common/PersonDetailTile";
+import { MovieTile } from "../../../common/MovieTile";
 import { LoadingIcon } from "../../../common/States/Loading";
-// import { Pagination } from "../../../common/Pagination";
+import { Pagination } from "../../../common/Pagination";
 import { ErrorMessage } from "../../../common/States/Error";
 import { useLocation } from "react-router-dom";
 
@@ -21,8 +22,7 @@ const PersonDetails = () => {
   const personInfo = useSelector(selectPersonInfo);
 
   useEffect(() => {
-    if (location.includes("person/"))
-    dispatch(fetchPersonById(id));
+    if (location.includes("person/")) dispatch(fetchPersonById(id));
   }, [dispatch, location, id]);
 
   if (status === "error") return <ErrorMessage />;
@@ -38,7 +38,17 @@ const PersonDetails = () => {
           birthplace={personInfo.personDescription.place_of_birth}
           biography={personInfo.personDescription.biography}
         />
-        {/* <Pagination /> */}
+
+        <>
+          <Wrapper>
+            <Title>Movies - cast {``}</Title>
+            <List>
+              <MovieTile />
+            </List>
+          </Wrapper>
+        </>
+
+        <Pagination />
       </Wrapper>
     );
 };
