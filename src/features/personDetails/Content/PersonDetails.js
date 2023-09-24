@@ -6,11 +6,10 @@ import {
   selectPersonStatus,
   fetchPersonById,
 } from "../personSlice";
-import { Wrapper, Title, List, WrapperM } from "./styled";
+import { Wrapper, Title, List, CastWrapper, CrewWrapper } from "./styled";
 import PersonDetailTile from "../../../common/PersonDetailTile";
 import { MovieTile } from "../../../common/MovieTile";
 import { LoadingIcon } from "../../../common/States/Loading";
-import { Pagination } from "../../../common/Pagination";
 import { ErrorMessage } from "../../../common/States/Error";
 import { useLocation } from "react-router-dom";
 
@@ -40,15 +39,19 @@ const PersonDetails = () => {
         />
 
         <>
-          <Wrapper>
+          <CastWrapper>
             <Title>Movies - cast {``}</Title>
             <List>
               <MovieTile />
             </List>
-          </Wrapper>
+          </CastWrapper>
+          <CrewWrapper>
+            <Title>Movies - crew {``}</Title>
+            <List>
+              <MovieTile />
+            </List>
+          </CrewWrapper>
         </>
-
-        <Pagination />
       </Wrapper>
     );
 };
