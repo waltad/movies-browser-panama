@@ -8,23 +8,23 @@ export const Wrapper = styled.div`
 
 export const DetailsTile = styled.article`
   background-color: ${({ theme }) => theme.colors.white};
-  padding: 40px;
-  box-shadow: ${({ theme }) => theme.tileShadow};
+  padding: 40px 40px 0px 40px;
+  /* box-shadow: ${({ theme }) => theme.forView}; */
   max-width: 1288px;
   margin-top: 56px;
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: 0fr 3fr;
+  grid-template-columns: 0fr 3fr;
+  grid-template-rows: 1fr 3fr;
   grid-gap: 0px 40px;
   align-content: start;
   justify-content: start;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    padding: 24px;
+    padding: 24px 24px 134px 24px;
     margin-top: 24px;
     grid-gap: 0px 24px;
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: 0fr 60%;
+    grid-template-rows: 0fr 80%;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
@@ -36,7 +36,7 @@ export const DetailsTile = styled.article`
   }
 `;
 
-export const NoImage = styled.img`
+export const Poster = styled.img`
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;

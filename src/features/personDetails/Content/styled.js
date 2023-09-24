@@ -5,9 +5,16 @@ display: flex;
 flex-direction: column;
 `;
 
-export const WrapperM = styled.div`
+export const CastWrapper = styled.div`
 display: flex;
 flex-direction: column;
+margin: 40px 40px 40px 40px;
+`;
+
+export const CrewWrapper = styled.div`
+display: flex;
+flex-direction: column;
+margin: 40px 40px 40px 40px;
 `;
 
 export const Title = styled.h2`

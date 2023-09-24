@@ -26,6 +26,11 @@ export const Poster = styled.img`
   border-radius: 5px;
   justify-self: center;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 212px;
+    height: auto;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 114px;
     height: 169px;
