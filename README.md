@@ -4,7 +4,11 @@ This is a group project made by our group called "Panama". We are assigned to re
 
 ## Usage:
 On top of the page, there is a navigation with "Movies" and "People". You can use it to navigate 
-You can scroll through many popular movies and people, also using pagination on the bottom of the page to see results for different pages. You can also use 'Search' input box to find your desired movie or person. Clicking on a movie or person tile will direct you to a subpage with some information about the movie or the person you have just clicked. There, you will also be able to see the cast and crew of a movie or if the tile was a person tile, you will be able to see in what movies was the person a cast or crew member. 
+You can scroll through many popular movies and people, also using pagination on the bottom of the page to see results for different pages. You can also use 'Search' input box to find your desired movie or person. Clicking on a movie or person tile will direct you to a subpage with some information about the movie or the person you have just clicked. There, you will also be able to see the cast and crew of a movie or if the tile was a person tile, you will be able to see in what movies was the person a cast or crew member.
+
+## Introduction
+
+![Movies-Browser Presentation](public/Introduction.gif)
 
 ## Demo:
 https://waltad.github.io/movies-browser-panama/

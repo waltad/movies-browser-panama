@@ -56,8 +56,8 @@ const PersonDetails = () => {
                   Movies - cast {`(${personInfo.personMovies.cast.length})`}
                 </Title>
                 <List>
-                  {personInfo.personMovies.cast.map((movie) => (
-                    <StyledNavLink key={movie.id} to={`/movies/${movie.id}`}>
+                  {personInfo.personMovies.cast.map((movie, index) => (
+                    <StyledNavLink key={index} to={`/movies/${movie.id}`}>
                       <MovieTile
                         poster_path={movie.poster_path}
                         title={movie.original_title}
@@ -75,8 +75,8 @@ const PersonDetails = () => {
                   Movies - crew {`(${personInfo.personMovies.crew.length})`}
                 </Title>
                 <List>
-                  {personInfo.personMovies.crew.map((movie) => (
-                    <StyledNavLink key={movie.id} to={`/movies/${movie.id}`}>
+                  {personInfo.personMovies.crew.map((movie, index) => (
+                    <StyledNavLink key={index} to={`/movies/${movie.id}`}>
                       <MovieTile
                         poster_path={movie.poster_path}
                         title={movie.original_title}
