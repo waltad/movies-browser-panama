@@ -77,7 +77,7 @@ const MovieDetails = () => {
                 src={
                   movieDetails.backdrop_path
                     ? `${securyBaseUrl}${bigPosterSize}${movieDetails.backdrop_path}`
-                    : null
+                    : noPoster
                 }
                 alt="bigPoster"
               />
