@@ -8,7 +8,7 @@ You can scroll through many popular movies and people, also using pagination on 
 
 ## Introduction
 
-![Movies-Browser Presentation](public/Introduction.gif)
+![Movies-Browser Presentation](public/introduction.gif)
 
 ## Demo:
 https://waltad.github.io/movies-browser-panama/
