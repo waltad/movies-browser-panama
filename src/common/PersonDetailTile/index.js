@@ -1,6 +1,6 @@
 import {
   DetailsTile,
-  NoImage,
+  Poster,
   Content,
   Title,
   LabelDate,
@@ -23,7 +23,7 @@ const PersonDetailTile = ({
   return (
     <Wrapper>
       <DetailsTile>
-        <NoImage
+        <Poster
           src={poster ? `${imagesAPIw400}${poster}` : anonymous}
           alt="name"
         />

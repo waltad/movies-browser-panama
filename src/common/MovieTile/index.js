@@ -38,10 +38,10 @@ export const MovieTile = ({ genre_ids, poster_path, title, release_date, vote_av
           {release_date ? release_date.slice(0, 4) : null}
         </Year>
         <Genres>
-          {genre_ids.map((genreId) => {
+          {Array.isArray(genre_ids) ? genre_ids.map((genreId) => {
             const genre = genres.find((g) => g.id === genreId);
             return <Genre key={genreId}>{genre ? genre.name : null}</Genre>;
-          })}
+          }) : null}
         </Genres>
       </MainInfo>
 
@@ -71,10 +71,10 @@ export const MovieTile = ({ genre_ids, poster_path, title, release_date, vote_av
           {release_date ? release_date.slice(0, 4) : null}
         </Year>
         <Genres>
-          {genre_ids.map((genreId) => {
+          {Array.isArray(genre_ids) ? genre_ids.map((genreId) => {
             const genre = genres.find((g) => g.id === genreId);
-            return <Genre key={genreId}>{genre ? genre.name : "Nieznany gatunek"}</Genre>;
-          })}
+            return <Genre key={genreId}>{genre ? genre.name : "Unknown genre"}</Genre>;
+          }) : null}
         </Genres>
       </MainInfo>
 

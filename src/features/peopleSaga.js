@@ -11,7 +11,7 @@ import { getSearchResults } from "../common/Navigation/Search/getSearchResults";
 function* fetchPeopleHandler({ payload }) {
   try {
     const peopleList = yield call(getPeople, payload);
-    yield delay(1000);
+    yield delay(500);
     yield put(fetchPeopleSuccess(peopleList));
   } catch (error) {
     yield put(fetchPeopleError());
@@ -21,7 +21,7 @@ function* fetchPeopleHandler({ payload }) {
 
 function* fetchSearchPeopleHandler({ payload: options }) {
   try {
-    yield delay(1000);
+    yield delay(500);
     const peopleList = yield call(getSearchResults, options.query, options.page, options.type);
     yield put(fetchPeopleSuccess(peopleList));
   } catch (error) {

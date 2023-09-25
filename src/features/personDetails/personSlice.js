@@ -33,7 +33,8 @@ const personSlice = createSlice({
   } = personSlice.actions;
   
   export const selectPerson = (state) => state.person;
-  export const selectPersonStatus = (state) => selectPerson(state).status
+  export const selectPersonStatus = (state) => selectPerson(state).status;
   export const selectPersonInfo = (state) => selectPerson(state).personInfo;
+  export const selectPersonInMovies = (state) => selectPerson(state).personMovies;
   
   export default personSlice.reducer;
