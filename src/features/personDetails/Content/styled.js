@@ -54,6 +54,7 @@ export const List = styled.ul`
   grid-template-columns: repeat(auto-fill, minmax(324px, 1fr));
   justify-content: space-around;
   gap: 24px;
+  padding: 0px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
     grid-template-columns: repeat(auto-fill, minmax(228px, 1fr));
