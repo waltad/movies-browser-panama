@@ -6,7 +6,14 @@ import {
   selectPersonStatus,
   fetchPersonById,
 } from "../personSlice";
-import { Wrapper, Title, List, CastWrapper, CrewWrapper } from "./styled";
+import {
+  Wrapper,
+  Title,
+  List,
+  CastWrapper,
+  CrewWrapper,
+  StyledNavLink,
+} from "./styled";
 import PersonDetailTile from "../../../common/PersonDetailTile";
 import { MovieTile } from "../../../common/MovieTile";
 import { LoadingIcon } from "../../../common/States/Loading";
@@ -45,12 +52,16 @@ const PersonDetails = () => {
             </Title>
             <List>
               {personInfo.personMovies.cast.map((movie) => (
-                <MovieTile
-                  key={`${movie.id}${movie.character}`}
-                  id={movie.id}
-                  poster={movie.profile_path}
-                  title={movie.original_title}
-                />
+                <StyledNavLink key={movie.id} to={`/movies/${movie.id}`}>
+                  <MovieTile
+                    poster_path={movie.poster_path}
+                    title={movie.original_title}
+                    genre_ids={movie.genre_ids}
+                    release_date={movie.release_date}
+                    vote_average={movie.vote_average}
+                    vote_count={movie.vote_count}
+                  />
+                </StyledNavLink>
               ))}
             </List>
           </CastWrapper>
@@ -59,7 +70,18 @@ const PersonDetails = () => {
               Movies - crew {`(${personInfo.personMovies.crew.length})`}
             </Title>
             <List>
-              <MovieTile />
+              {personInfo.personMovies.crew.map((movie) => (
+                <StyledNavLink key={movie.id} to={`/movies/${movie.id}`}>
+                  <MovieTile
+                    poster_path={movie.poster_path}
+                    title={movie.original_title}
+                    genre_ids={movie.genre_ids}
+                    release_date={movie.release_date}
+                    vote_average={movie.vote_average}
+                    vote_count={movie.vote_count}
+                  />
+                </StyledNavLink>
+              ))}
             </List>
           </CrewWrapper>
         </>

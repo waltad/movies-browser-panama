@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -39,4 +40,26 @@ export const Title = styled.h1`
   }
 `;
 
-export const List = styled.ul``;
+export const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.black};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    width: 100%;
+  }
+`;
+
+export const List = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(324px, 1fr));
+  justify-content: space-around;
+  gap: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
+    grid-template-columns: repeat(auto-fill, minmax(228px, 1fr));
+    width: 100%;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+  }
+`;

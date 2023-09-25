@@ -73,7 +73,7 @@ export const MovieTile = ({ genre_ids, poster_path, title, release_date, vote_av
         <Genres>
           {Array.isArray(genre_ids) ? genre_ids.map((genreId) => {
             const genre = genres.find((g) => g.id === genreId);
-            return <Genre key={genreId}>{genre ? genre.name : "Nieznany gatunek"}</Genre>;
+            return <Genre key={genreId}>{genre ? genre.name : "Unknown genre"}</Genre>;
           }) : null}
         </Genres>
       </MainInfo>
