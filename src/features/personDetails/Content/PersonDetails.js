@@ -56,7 +56,7 @@ const PersonDetails = () => {
                   <MovieTile
                     poster_path={movie.poster_path}
                     title={movie.original_title}
-                    genre_ids={movie.genre_ids}
+                    genre_ids={(movie.genre_ids).slice(0, 2)}
                     release_date={movie.release_date}
                     vote_average={movie.vote_average}
                     vote_count={movie.vote_count}
@@ -75,7 +75,7 @@ const PersonDetails = () => {
                   <MovieTile
                     poster_path={movie.poster_path}
                     title={movie.original_title}
-                    genre_ids={movie.genre_ids}
+                    genre_ids={(movie.genre_ids).slice(0, 2)}
                     release_date={movie.release_date}
                     vote_average={movie.vote_average}
                     vote_count={movie.vote_count}
