@@ -30,9 +30,10 @@ export const Search = ({ placeholder }) => {
     };
 
     const onFocus = () => {
-        if (location.pathname.startsWith("/movies/" || "/people/")) {
-            location.pathname.startsWith("/movies/") ?
-                history.replace("/movies") : history.replace("/people")
+        if (location.pathname.startsWith("/movies/")) {
+            history.replace("/movies");
+        } else if (location.pathname.startsWith("/people/")) {
+            history.replace("/people");
         } else {
             setPageToFirst();
         }

@@ -6,7 +6,7 @@ export const getPersonById = async (id) => {
       `${personAPI}${id}?api_key=${APIkey}&language=en-US`
     );
     if (!response.ok) {
-      throw new Error("An error occurred. Please try again later.");
+      new Error(response.statusText);
     }
     const data = await response.json();
     return data;
