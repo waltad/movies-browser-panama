@@ -336,11 +336,6 @@ export const Creditsist = styled.ul`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMini}) {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    height: 100%;
-  }
 `;
 
 export const StyledNavLink = styled(NavLink)`
