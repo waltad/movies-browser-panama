@@ -39,13 +39,13 @@ export const PrevArrowIcon = styled(prevArrow)`
     ismobile &&
     css`
       display: none;
-  `};
-  
+    `};
+
   ${({ isdisabled }) =>
     isdisabled &&
     css`
       color: ${({ theme }) => theme.colors.waterloo};
-  `};
+    `};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     display: block;
@@ -61,11 +61,11 @@ export const NextArrowIcon = styled(nextArrow)`
       display: none;
     `};
 
-    ${({ isdisabled }) =>
+  ${({ isdisabled }) =>
     isdisabled &&
     css`
       color: ${({ theme }) => theme.colors.waterloo};
-  `};
+    `};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     display: block;

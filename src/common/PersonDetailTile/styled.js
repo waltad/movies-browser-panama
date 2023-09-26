@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
 export const DetailsTile = styled.article`
   background-color: ${({ theme }) => theme.colors.white};
   padding: 40px 40px 0px 40px;
-  /* box-shadow: ${({ theme }) => theme.forView}; */
   max-width: 1288px;
   margin-top: 56px;
   display: grid;
@@ -98,7 +97,7 @@ export const DetailsLine = styled.div`
   display: flex;
   flex-direction: row;
 
-  ${({ 'data-mobile': mobile }) =>
+  ${({ "data-mobile": mobile }) =>
     mobile &&
     css`
       @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
@@ -131,13 +130,13 @@ export const LabelDate = styled.p`
     display: none;
   }
 
-  ${({ 'data-none': none }) =>
+  ${({ "data-none": none }) =>
     none &&
     css`
       display: none;
     `}
 
-  ${({ 'data-mobile': mobile }) =>
+  ${({ "data-mobile": mobile }) =>
     mobile &&
     css`
       @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
