@@ -25,5 +25,4 @@ export const theme = {
   },
 
   tileShadow: "0px 4px 12px 0px rgba(186, 199, 213, 0.5);",
-  // forView: "0px 4px 12px 0px rgba(186, 199, 213, 1);"
 };
