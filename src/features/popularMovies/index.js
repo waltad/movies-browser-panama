@@ -1,10 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import {
-  selectStatus,
-  selectData,
-  fetchSearchMovies,
-} from "../moviesSlice";
+import { selectStatus, selectData, fetchSearchMovies } from "../moviesSlice";
 import { MovieTile } from "../../common/MovieTile";
 import { ErrorMessage } from "../../common/States/Error";
 import { LoadingIcon } from "../../common/States/Loading";
@@ -29,7 +25,7 @@ const PopularMovies = () => {
     const options = {
       query: query,
       page: page,
-      type: "movie"
+      type: "movie",
     };
 
     if (query) {
@@ -41,9 +37,7 @@ const PopularMovies = () => {
 
   switch (status) {
     case "error":
-      return (
-        <ErrorMessage />
-      );
+      return <ErrorMessage />;
     case "loading":
       return query ? (
         <Wrapped>
@@ -52,7 +46,7 @@ const PopularMovies = () => {
         </Wrapped>
       ) : (
         <LoadingIcon />
-      )
+      );
     case "success":
       if (!popularMovies.length && query) {
         return (
@@ -60,7 +54,7 @@ const PopularMovies = () => {
             <Title>Sorry, there are no results for "{query}"</Title>
             <NoResults />
           </Wrapped>
-        )
+        );
       } else if (query) {
         return (
           <>
@@ -75,7 +69,7 @@ const PopularMovies = () => {
                       release_date={movie.release_date}
                       vote_average={movie.vote_average}
                       vote_count={movie.vote_count}
-                      genre_ids={(movie.genre_ids).slice(0, 2)}
+                      genre_ids={movie.genre_ids.slice(0, 2)}
                       id={movie.id}
                     />
                   </StyledNavLink>
@@ -84,7 +78,7 @@ const PopularMovies = () => {
             </Wrapped>
             <Pagination />
           </>
-        )
+        );
       } else {
         return (
           <>
@@ -99,7 +93,7 @@ const PopularMovies = () => {
                       release_date={movie.release_date}
                       vote_average={movie.vote_average}
                       vote_count={movie.vote_count}
-                      genre_ids={(movie.genre_ids).slice(0, 2)}
+                      genre_ids={movie.genre_ids.slice(0, 2)}
                       id={movie.id}
                     />
                   </StyledNavLink>
@@ -108,12 +102,10 @@ const PopularMovies = () => {
             </Wrapped>
             <Pagination />
           </>
-        )
+        );
       }
     default:
-      return (
-        <ErrorMessage />
-      );
+      return <ErrorMessage />;
   }
 };
 

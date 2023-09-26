@@ -8,8 +8,8 @@ export default styled.div`
     width: 100%;
   }
 
-@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-  width: 16px;
-  height: 16px;
-}
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 16px;
+    height: 16px;
+  }
 `;

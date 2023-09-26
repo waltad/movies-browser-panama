@@ -143,11 +143,11 @@ export const Title = styled.div`
     credits &&
     css`
       margin-bottom: 20px;
-      
+
       @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         margin-bottom: 8px;
       }
-  `}
+    `}
 `;
 
 export const Year = styled.div`

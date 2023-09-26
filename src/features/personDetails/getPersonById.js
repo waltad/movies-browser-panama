@@ -17,7 +17,9 @@ export const getPersonById = async (id) => {
 
 export const getPersonInMoviesByID = async (id) => {
   try {
-    const response = await fetch(`${personAPI}${id}/movie_credits?api_key=${APIkey}&language=en-US`);
+    const response = await fetch(
+      `${personAPI}${id}/movie_credits?api_key=${APIkey}&language=en-US`
+    );
 
     if (!response.ok) {
       throw new Error("An error occurred. Please try again later.");

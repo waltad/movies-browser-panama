@@ -9,13 +9,13 @@ import movieDetailsReducer from "./features/movieDetailsSlice";
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
-    reducer: {
-        movies: moviesReducer,
-        people: peopleReducer,
-        person: personReducer,
-        movieDetails: movieDetailsReducer,
-    },
-    middleware: [sagaMiddleware],
+  reducer: {
+    movies: moviesReducer,
+    people: peopleReducer,
+    person: personReducer,
+    movieDetails: movieDetailsReducer,
+  },
+  middleware: [sagaMiddleware],
 });
 
 sagaMiddleware.run(rootSaga);

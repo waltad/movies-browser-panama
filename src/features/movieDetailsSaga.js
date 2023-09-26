@@ -1,5 +1,10 @@
 import { call, put, all, delay, takeLatest } from "redux-saga/effects";
-import { fetchMovieDetails, fetchMovieDetailsError, setMovieDetails, setMovieCredits } from "./movieDetailsSlice";
+import {
+  fetchMovieDetails,
+  fetchMovieDetailsError,
+  setMovieDetails,
+  setMovieCredits,
+} from "./movieDetailsSlice";
 import { getMovieDetails, getMovieCredits } from "./getMovieDetails";
 
 function* fetchMovieDetailsHandler({ payload: movieId }) {

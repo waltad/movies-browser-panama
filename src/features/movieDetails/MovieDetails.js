@@ -57,8 +57,7 @@ const MovieDetails = () => {
   const crew = useSelector(selectMovieCreditsData).crew;
 
   useEffect(() => {
-    if (location.includes("movies/"))
-    dispatch(fetchMovieDetails(movieId));
+    if (location.includes("movies/")) dispatch(fetchMovieDetails(movieId));
   }, [dispatch, location, movieId]);
 
   switch (status) {
@@ -83,9 +82,7 @@ const MovieDetails = () => {
               />
               <MainInfo>
                 <BigTitle>
-                  {movieDetails.title
-                    ? movieDetails.title
-                    : null}
+                  {movieDetails.title ? movieDetails.title : null}
                 </BigTitle>
 
                 <TopRating>
@@ -99,13 +96,10 @@ const MovieDetails = () => {
                       : null}
                     <TopSmallerText> /10</TopSmallerText>
                   </TopValue>
-
                 </TopRating>
 
                 <TopVotes>
-                  {movieDetails.vote_count
-                    ? movieDetails.vote_count
-                    : null}{" "}
+                  {movieDetails.vote_count ? movieDetails.vote_count : null}{" "}
                   votes
                 </TopVotes>
               </MainInfo>
@@ -121,11 +115,7 @@ const MovieDetails = () => {
               />
 
               <Info>
-                <Title>
-                  {movieDetails.title
-                    ? movieDetails.title
-                    : null}
-                </Title>
+                <Title>{movieDetails.title ? movieDetails.title : null}</Title>
 
                 <Year>
                   {movieDetails.release_date
@@ -144,9 +134,13 @@ const MovieDetails = () => {
 
                   <StyledText>Release date: </StyledText>
                   {movieDetails.release_date
-                    ? `${movieDetails.release_date.slice(8, 10)
-                      }.${movieDetails.release_date.slice(5, 7)
-                      }.${movieDetails.release_date.slice(0, 4)}`
+                    ? `${movieDetails.release_date.slice(
+                        8,
+                        10
+                      )}.${movieDetails.release_date.slice(
+                        5,
+                        7
+                      )}.${movieDetails.release_date.slice(0, 4)}`
                     : null}
                 </ProductionAndRelease>
 
@@ -172,18 +166,14 @@ const MovieDetails = () => {
                   <SmallerText>/ 10</SmallerText>
 
                   <Votes>
-                    {movieDetails.vote_count
-                      ? movieDetails.vote_count
-                      : null}{" "}
+                    {movieDetails.vote_count ? movieDetails.vote_count : null}{" "}
                     votes
                   </Votes>
                 </Rating>
               </Info>
 
               <Description>
-                {movieDetails.overview
-                  ? movieDetails.overview
-                  : null}
+                {movieDetails.overview ? movieDetails.overview : null}
               </Description>
             </MovieSection>
 
