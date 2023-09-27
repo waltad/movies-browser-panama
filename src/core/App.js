@@ -1,6 +1,6 @@
 import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import { Navigation } from "../common/Navigation";
-import MovieDetails from "../features/movieDetails/MovieDetails";
+import MovieDetails from "../features/movieDetails/Content/MovieDetails";
 import PopularMovies from "../features/popularMovies/Content";
 import PersonDetails from "../features/personDetails/Content/PersonDetails";
 import PopularPeople from "../features/popularPeople/Content/people";

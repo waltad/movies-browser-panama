@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import Genres from "../../common/Genres";
-import Genre from "../../common/Genre";
+import Genres from "../../../common/Genres";
+import Genre from "../../../common/Genre";
 import {
   MoviePage,
   MovieSection,
@@ -28,19 +28,19 @@ import {
   Creditsist,
   StyledNavLink,
   Section,
-} from "../movieDetails/styled";
-import noPoster from "../../images/Movie.png";
-import star from "../../images/Star.png";
-import StyledStar from "../../common/StyledStar";
-import { PersonTile } from "../../common/PersonTile";
+} from "./styled";
+import noPoster from "../../../images/Movie.png";
+import star from "../../../images/Star.png";
+import StyledStar from "../../../common/StyledStar";
+import { PersonTile } from "../../../common/PersonTile";
 import {
   fetchMovieDetails,
   selectMovieCreditsData,
   selectMovieDetailsData,
   selectMovieDetailsStatus,
 } from "../movieDetailsSlice";
-import { ErrorMessage } from "../../common/States/Error";
-import { LoadingIcon } from "../../common/States/Loading";
+import { ErrorMessage } from "../../../common/States/Error";
+import { LoadingIcon } from "../../../common/States/Loading";
 import { useParams } from "react-router-dom";
 
 const securyBaseUrl = "https://image.tmdb.org/t/p/";

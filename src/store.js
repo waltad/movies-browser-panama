@@ -4,7 +4,7 @@ import rootSaga from "./rootSaga";
 import moviesReducer from "./features/popularMovies/moviesSlice";
 import peopleReducer from "./features/popularPeople/peopleSlice";
 import personReducer from "./features/personDetails/personSlice";
-import movieDetailsReducer from "./features/movieDetailsSlice";
+import movieDetailsReducer from "./features/movieDetails/movieDetailsSlice";
 
 const sagaMiddleware = createSagaMiddleware();
 
