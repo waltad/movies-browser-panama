@@ -5,7 +5,7 @@ import {
   selectPeopleList,
   selectPeopleStatus,
   fetchSearchPeople,
-} from "../../peopleSlice";
+} from "../peopleSlice";
 import { Wrapper, Header, PeopleList, StyledNavLink } from "./styled";
 import { PersonTile } from "../../../common/PersonTile";
 import { Pagination } from "../../../common/Pagination";

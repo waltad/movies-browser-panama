@@ -6,7 +6,7 @@ import {
   fetchSearchPeople,
 } from "./peopleSlice";
 import { getPeople } from "./getPeople";
-import { getSearchResults } from "../common/Navigation/Search/getSearchResults";
+import { getSearchResults } from "../../common/Navigation/Search/getSearchResults";
 
 function* fetchPeopleHandler({ payload }) {
   try {
