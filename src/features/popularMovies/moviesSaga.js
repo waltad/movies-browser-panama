@@ -14,8 +14,8 @@ import {
   fetchSearchMovies,
 } from "./moviesSlice";
 import { getPopularMovies } from "./getPopularMovies";
-import { getGenresList } from "./getGenresList";
-import { getSearchResults } from "../common/Navigation/Search/getSearchResults";
+import { getGenresList } from "../getGenresList";
+import { getSearchResults } from "../../common/Navigation/Search/getSearchResults";
 
 function* fetchPopularMoviesHandler({ payload: page }) {
   try {

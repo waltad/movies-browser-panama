@@ -4,7 +4,7 @@ import {
 } from "../Navigation/queryParameters";
 import paginationParamName from "./paginationParamName";
 import { useState, useEffect } from "react";
-import { selectData } from "../../features/moviesSlice";
+import { selectData } from "../../features/popularMovies/moviesSlice";
 import { selectPeopleList } from "../../features/popularPeople/peopleSlice";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { useSelector } from "react-redux";

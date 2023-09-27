@@ -14,7 +14,7 @@ import noPoster from "../../images/Movie.png";
 import star from "../../images/Star.png";
 import StyledStar from "../StyledStar";
 import { useSelector } from "react-redux";
-import { selectGenres } from "../../features/moviesSlice";
+import { selectGenres } from "../../features/popularMovies/moviesSlice";
 
 const securyBaseUrl = "https://image.tmdb.org/t/p/";
 const posterSize = "w300";

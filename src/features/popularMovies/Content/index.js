@@ -1,16 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { selectStatus, selectData, fetchSearchMovies } from "../moviesSlice";
-import { MovieTile } from "../../common/MovieTile";
-import { ErrorMessage } from "../../common/States/Error";
-import { LoadingIcon } from "../../common/States/Loading";
+import { MovieTile } from "../../../common/MovieTile";
+import { ErrorMessage } from "../../../common/States/Error";
+import { LoadingIcon } from "../../../common/States/Loading";
 import { MovieList, StyledNavLink, Title, Wrapped } from "./styled";
 import { fetchPopularMovies } from "../moviesSlice";
-import { Pagination } from "../../common/Pagination";
-import { useQueryParameter } from "../../common/Navigation/queryParameters";
-import searchQueryParamName from "../../common/Navigation/searchQueryParamName";
-import { NoResults } from "../../common/States/NoResults";
-import paginationParamName from "../../common/Pagination/paginationParamName";
+import { Pagination } from "../../../common/Pagination";
+import { useQueryParameter } from "../../../common/Navigation/queryParameters";
+import searchQueryParamName from "../../../common/Navigation/searchQueryParamName";
+import { NoResults } from "../../../common/States/NoResults";
+import paginationParamName from "../../../common/Pagination/paginationParamName";
 
 const PopularMovies = () => {
   const dispatch = useDispatch();
