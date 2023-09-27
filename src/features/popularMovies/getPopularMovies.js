@@ -1,4 +1,4 @@
-import { authorizationKey } from "../authorizationKey";
+import { authorizationKey } from "../../authorizationKey";
 
 const options = {
   method: "GET",

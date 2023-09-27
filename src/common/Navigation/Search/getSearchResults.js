@@ -1,5 +1,5 @@
 import axios from "axios";
-import { authorizationKey } from "../../../features/authorizationKey";
+import { authorizationKey } from "../../../authorizationKey";
 
 export const getSearchResults = async (query, page, type) => {
   const options = {
