@@ -25,6 +25,11 @@ export const Poster = styled.img`
   height: 434px;
   border-radius: 5px;
   justify-self: center;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: 212px;
@@ -56,10 +61,10 @@ export const Title = styled.div`
   text-align: left;
   margin: 8px 0;
   overflow: hidden;
-	text-overflow: ellipsis;
-	display: -webkit-box;
-	-webkit-line-clamp: 2;
-	-webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 16px;
