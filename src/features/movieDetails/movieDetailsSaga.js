@@ -9,7 +9,7 @@ import { getMovieDetails, getMovieCredits } from "./getMovieDetails";
 
 function* fetchMovieDetailsHandler({ payload: movieId }) {
   try {
-    yield delay(1000);
+    yield delay(300);
     const [movieDetails, movieCredits] = yield all([
       call(getMovieDetails, movieId),
       call(getMovieCredits, movieId),
