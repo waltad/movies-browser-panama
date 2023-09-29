@@ -9,6 +9,11 @@ export const Container = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     min-width: 136px;

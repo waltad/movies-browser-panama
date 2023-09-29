@@ -10,6 +10,11 @@ export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     grid-template-columns: auto 1fr;
