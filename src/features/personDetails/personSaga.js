@@ -9,7 +9,7 @@ import { getPersonById, getPersonInMoviesByID } from "./getPersonById";
 function* fetchPersonByIdHandler({ payload }) {
   try {
     const personDescription = yield call(getPersonById, payload);
-    const personMovies = yield call (getPersonInMoviesByID, payload);
+    const personMovies = yield call(getPersonInMoviesByID, payload);
     const personInfo = {
       personDescription: personDescription,
       personMovies: personMovies,
@@ -20,8 +20,8 @@ function* fetchPersonByIdHandler({ payload }) {
     yield put(fetchPersonByIdError());
     yield call(alert, "An error occurred. Please try again later.");
   }
-};
+}
 
 export function* personSaga() {
   yield takeLatest(fetchPersonById, fetchPersonByIdHandler);
-};
+}

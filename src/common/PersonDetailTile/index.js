@@ -31,7 +31,9 @@ const PersonDetailTile = ({
           <Title>{name}</Title>
           <DetailsLine>
             <LabelDate>Date of birth:</LabelDate>
-            <LabelDate data-mobile data-none>Birth:</LabelDate>
+            <LabelDate data-mobile data-none>
+              Birth:
+            </LabelDate>
             <Info>{new Date(birthday).toLocaleDateString()}</Info>
           </DetailsLine>
           <DetailsLine data-mobile>

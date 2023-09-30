@@ -8,17 +8,17 @@ const peopleSlice = createSlice({
   },
 
   reducers: {
-    fetchPeople: state => {
+    fetchPeople: (state) => {
       state.status = "loading";
     },
     fetchPeopleSuccess: (state, { payload: peopleList }) => {
       state.peopleList = peopleList;
       state.status = "success";
     },
-    fetchPeopleError: state => {
+    fetchPeopleError: (state) => {
       state.status = "error";
     },
-    fetchSearchPeople: state => {
+    fetchSearchPeople: (state) => {
       state.status = "loading";
     },
   },
@@ -29,7 +29,7 @@ export const {
   fetchPeopleSuccess,
   fetchPeopleError,
   fetchPeoplePageModifer,
-  fetchSearchPeople
+  fetchSearchPeople,
 } = peopleSlice.actions;
 
 export const selectPeopleState = (state) => state.people;

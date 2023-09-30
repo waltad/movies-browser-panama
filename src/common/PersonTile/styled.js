@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-// import { Link } from "react-router-dom";
 
 export const Container = styled.article`
   min-width: 208px;
@@ -10,7 +9,12 @@ export const Container = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform 0.2s;
 
+  &:hover {
+    transform: scale(1.05);
+  }
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     min-width: 136px;
     height: 245px;
@@ -35,11 +39,6 @@ export const Image = styled.img`
   height: 100%;
   object-fit: cover;
   border-radius: 5px;
-  transition: transform 0.2s;
-
-  &:hover {
-    transform: scale(1.05);
-  }
 `;
 
 export const Name = styled.header`

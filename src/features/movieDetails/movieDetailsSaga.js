@@ -1,10 +1,15 @@
 import { call, put, all, delay, takeLatest } from "redux-saga/effects";
-import { fetchMovieDetails, fetchMovieDetailsError, setMovieDetails, setMovieCredits } from "./movieDetailsSlice";
+import {
+  fetchMovieDetails,
+  fetchMovieDetailsError,
+  setMovieDetails,
+  setMovieCredits,
+} from "./movieDetailsSlice";
 import { getMovieDetails, getMovieCredits } from "./getMovieDetails";
 
 function* fetchMovieDetailsHandler({ payload: movieId }) {
   try {
-    yield delay(1000);
+    yield delay(300);
     const [movieDetails, movieCredits] = yield all([
       call(getMovieDetails, movieId),
       call(getMovieCredits, movieId),

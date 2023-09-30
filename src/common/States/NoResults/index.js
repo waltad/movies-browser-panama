@@ -3,7 +3,7 @@ import { Wrapper } from "../styled";
 import { NoResultsImage } from "./styled";
 
 export const NoResults = () => (
-    <Wrapper>
-        <NoResultsImage src={noresults} alt="No results found" />
-    </Wrapper>
+  <Wrapper>
+    <NoResultsImage src={noresults} alt="No results found" />
+  </Wrapper>
 );

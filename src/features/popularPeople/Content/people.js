@@ -4,8 +4,8 @@ import {
   fetchPeople,
   selectPeopleList,
   selectPeopleStatus,
-  fetchSearchPeople
-} from "../../peopleSlice";
+  fetchSearchPeople,
+} from "../peopleSlice";
 import { Wrapper, Header, PeopleList, StyledNavLink } from "./styled";
 import { PersonTile } from "../../../common/PersonTile";
 import { Pagination } from "../../../common/Pagination";
@@ -29,7 +29,7 @@ const PopularPeople = ({ previousQuery }) => {
     const options = {
       query: query,
       page: page,
-      type: "person"
+      type: "person",
     };
 
     if (query) {
@@ -41,9 +41,7 @@ const PopularPeople = ({ previousQuery }) => {
 
   switch (status) {
     case "error":
-      return (
-        <ErrorMessage />
-      );
+      return <ErrorMessage />;
     case "loading":
       return query ? (
         <Wrapper>
@@ -52,7 +50,7 @@ const PopularPeople = ({ previousQuery }) => {
         </Wrapper>
       ) : (
         <LoadingIcon />
-      )
+      );
     case "success":
       if (!peopleList.length && query) {
         return (
@@ -60,7 +58,7 @@ const PopularPeople = ({ previousQuery }) => {
             <Header>Sorry, there are no results for "{query}"</Header>
             <NoResults />
           </Wrapper>
-        )
+        );
       } else if (query) {
         return (
           <>
@@ -80,7 +78,7 @@ const PopularPeople = ({ previousQuery }) => {
               <Pagination />
             </Wrapper>
           </>
-        )
+        );
       } else {
         return (
           <>
@@ -100,12 +98,10 @@ const PopularPeople = ({ previousQuery }) => {
               <Pagination />
             </Wrapper>
           </>
-        )
+        );
       }
     default:
-      return (
-        <ErrorMessage />
-      );
+      return <ErrorMessage />;
   }
 };
 
