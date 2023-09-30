@@ -14,7 +14,7 @@ export const Container = styled.article`
   &:hover {
     transform: scale(1.05);
   }
-
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     min-width: 136px;
     height: 245px;

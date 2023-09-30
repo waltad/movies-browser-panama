@@ -30,6 +30,11 @@ export const Poster = styled.img`
   height: 434px;
   border-radius: 5px;
   justify-self: center;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: 212px;
