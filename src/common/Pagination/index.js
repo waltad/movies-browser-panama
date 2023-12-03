@@ -24,12 +24,12 @@ export const Pagination = () => {
   return (
     <Wrapper>
       <Button onClick={setFirstPage} disabled={isFirstPage}>
-        <PrevArrowIcon isdisabled={isFirstPage} />
-        <PrevArrowIcon ismobile="true" isdisabled={isFirstPage} />
+        <PrevArrowIcon isdisabled={isFirstPage.toString()} />
+        <PrevArrowIcon ismobile="true" isdisabled={isFirstPage.toString()} />
         <ButtonText>First</ButtonText>
       </Button>
       <Button onClick={setPreviousPage} disabled={isFirstPage}>
-        <PrevArrowIcon isdisabled={isFirstPage} />
+        <PrevArrowIcon isdisabled={isFirstPage.toString()} />
         <ButtonText>Previous</ButtonText>
       </Button>
       <PageCounter>
@@ -38,12 +38,12 @@ export const Pagination = () => {
       </PageCounter>
       <Button onClick={setNextPage} disabled={isLastPage}>
         <ButtonText>Next</ButtonText>
-        <NextArrowIcon isdisabled={isLastPage} />
+        <NextArrowIcon isdisabled={isLastPage.toString()} />
       </Button>
       <Button onClick={setLastPage} disabled={isLastPage}>
         <ButtonText>Last</ButtonText>
-        <NextArrowIcon isdisabled={isLastPage} />
-        <NextArrowIcon ismobile="true" isdisabled={isLastPage} />
+        <NextArrowIcon isdisabled={isLastPage.toString()} />
+        <NextArrowIcon ismobile="true" isdisabled={isLastPage.toString()} />
       </Button>
     </Wrapper>
   );
