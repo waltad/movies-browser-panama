@@ -14,6 +14,9 @@ You can scroll through many popular movies and people, also using pagination on 
 https://waltad.github.io/movies-browser-panama/
 
 ## Tools used:
+
+![TechnologiesIcons](https://skillicons.dev/icons?i=html,css,js,react,redux,git,styledcomponents,figma,github,vscode)
+
 - HTML
 - CSS
 - Javascript
@@ -23,6 +26,8 @@ https://waltad.github.io/movies-browser-panama/
 - Redux (@reduxjs/toolkit, react-redux, redux-saga)
 - axios
 - custom hooks
+- figma
+- git
 
 # Getting Started with Create React App
 
