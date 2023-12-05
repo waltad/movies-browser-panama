@@ -16,7 +16,7 @@ import { useQueryParameter } from "../../../common/Navigation/queryParameters";
 import searchQueryParamName from "../../../common/Navigation/searchQueryParamName";
 import paginationParamName from "../../../common/Pagination/paginationParamName";
 
-const PopularPeople = ({ previousQuery }) => {
+const PopularPeople = () => {
   const dispatch = useDispatch();
   const status = useSelector(selectPeopleStatus);
   const data = useSelector(selectPeopleList);
