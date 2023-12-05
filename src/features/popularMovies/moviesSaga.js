@@ -19,7 +19,7 @@ import { getSearchResults } from "../../common/Navigation/Search/getSearchResult
 
 function* fetchPopularMoviesHandler({ payload: page }) {
   try {
-    yield delay(300);
+    yield delay(600);
     const [popularMovies, genres] = yield all([
       call(getPopularMovies, page),
       call(getGenresList),
@@ -33,7 +33,7 @@ function* fetchPopularMoviesHandler({ payload: page }) {
 
 function* fetchSearchMoviesHandler({ payload: options }) {
   try {
-    yield delay(300);
+    yield delay(600);
     const [popularMovies, genres] = yield all([
       call(getSearchResults, options.query, options.page, options.type),
       call(getGenresList),

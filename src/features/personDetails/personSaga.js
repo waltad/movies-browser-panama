@@ -14,7 +14,7 @@ function* fetchPersonByIdHandler({ payload }) {
       personDescription: personDescription,
       personMovies: personMovies,
     };
-    yield delay(300);
+    yield delay(600);
     yield put(fetchPersonByIdSuccess(personInfo));
   } catch (error) {
     yield put(fetchPersonByIdError());
