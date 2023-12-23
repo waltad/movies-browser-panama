@@ -9,6 +9,10 @@ const options = {
 };
 
 export const getPopularMovies = async (page) => {
+  if (page === null) {
+    return;
+  }
+
   const response = await fetch(
     `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}`,
     options
