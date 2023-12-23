@@ -19,13 +19,15 @@ import { getSearchResults } from "../../common/Navigation/Search/getSearchResult
 
 function* fetchPopularMoviesHandler({ payload: page }) {
   try {
-    yield delay(600);
-    const [popularMovies, genres] = yield all([
-      call(getPopularMovies, page),
-      call(getGenresList),
-    ]);
-    yield put(setMoviesData(popularMovies));
-    yield put(setGenres(genres));
+    if (page != null) {
+      yield delay(600);
+      const [popularMovies, genres] = yield all([
+        call(getPopularMovies, page),
+        call(getGenresList),
+      ]);
+      yield put(setMoviesData(popularMovies));
+      yield put(setGenres(genres));
+    }
   } catch (error) {
     yield put(fetchError());
   }

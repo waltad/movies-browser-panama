@@ -23,7 +23,7 @@ const PopularPeople = () => {
   const peopleList = data.results || [];
   const query = useQueryParameter(searchQueryParamName);
   const total_results = data.total_results;
-  const page = useQueryParameter(paginationParamName);
+  const page = useQueryParameter(paginationParamName) || 1;
 
   useEffect(() => {
     const options = {

@@ -8,11 +8,13 @@ import {
 import { getPeople } from "./getPeople";
 import { getSearchResults } from "../../common/Navigation/Search/getSearchResults";
 
-function* fetchPeopleHandler({ payload }) {
+function* fetchPeopleHandler({ payload: page }) {
   try {
-    const peopleList = yield call(getPeople, payload);
-    yield delay(600);
-    yield put(fetchPeopleSuccess(peopleList));
+    if (page != null) {
+      const peopleList = yield call(getPeople, page);
+      yield delay(600);
+      yield put(fetchPeopleSuccess(peopleList));
+    }
   } catch (error) {
     yield put(fetchPeopleError());
     yield call(

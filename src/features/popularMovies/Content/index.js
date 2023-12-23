@@ -19,7 +19,7 @@ const PopularMovies = () => {
   const popularMovies = data.results || [];
   const query = useQueryParameter(searchQueryParamName);
   const totalResults = data.total_results;
-  const page = useQueryParameter(paginationParamName);
+  const page = useQueryParameter(paginationParamName) || 1;
 
   useEffect(() => {
     const options = {

@@ -18,6 +18,6 @@ export const useReplaceQueryParameter = () => {
       searchParams.set(key, value);
     }
 
-    history.push(`${location.pathname}?${searchParams.toString()}`);
+    history.replace(`${location.pathname}?${searchParams.toString()}`);
   };
 };
