@@ -15,7 +15,7 @@ export const getGenresList = async () => {
   const response = await fetch(urlGenresList, options);
 
   if (!response.ok) {
-    new Error(response.statusText);
+    throw new Error(response.statusText);
   }
 
   const result = await response.json();
