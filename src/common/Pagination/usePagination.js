@@ -23,10 +23,12 @@ export const usePagination = () => {
   );
 
   useEffect(() => {
-    replaceQueryParameter({
-      key: paginationParamName,
-      value: page,
-    });
+    if (page !== 1) {
+      replaceQueryParameter({
+        key: paginationParamName,
+        value: page,
+      });
+    }
   }, [page]);
 
   const setNextPage = () => {
