@@ -28,6 +28,10 @@ export const usePagination = () => {
         key: paginationParamName,
         value: page,
       });
+    } else {
+      replaceQueryParameter({
+        key: paginationParamName,
+      });
     }
   }, [page]);
 
